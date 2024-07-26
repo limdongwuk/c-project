@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="homework">
+      <UniqueIdentifier>{4ed0b642-5576-4df1-af9e-99f9557e304f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lesson">
+      <UniqueIdentifier>{5f11c7e2-d698-4748-a4fe-4be216651818}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lesson\01. 프로젝트 생성 + 입출력">
+      <UniqueIdentifier>{51b9020a-add4-4587-904d-ad299bfd4367}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lesson\02. 자료형 + 변수 + 난수%28c++%29">
+      <UniqueIdentifier>{6d165930-6a4d-4009-9639-2a19344bbc1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lesson\03. 연산자+ 반복문">
+      <UniqueIdentifier>{444ac815-00db-4459-a651-c0a5b235427b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lesson\04. 조건문">
+      <UniqueIdentifier>{443f5a5d-5556-48fc-ba95-04f956f7da70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lesson\05. 함수 + 변/상수 + 전처리기">
+      <UniqueIdentifier>{514bcc6a-6424-4021-bec4-637197eecf4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lesson\06.배열">
+      <UniqueIdentifier>{82a61e5c-f7c4-4275-b8ae-7d8358fcc2bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lesson\07.삼항연산자 / char / string/오버로딩">
+      <UniqueIdentifier>{215439d6-73c3-4edd-93a2-829977c42c9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lesson\08.">
+      <UniqueIdentifier>{dfb423c7-f448-47d4-ade5-9795cb82d50d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Example_01.cpp">
+      <Filter>Lesson\01. 프로젝트 생성 + 입출력</Filter>
+    </ClCompile>
+    <ClCompile Include="Example_02.cpp">
+      <Filter>Lesson\02. 자료형 + 변수 + 난수%28c++%29</Filter>
+    </ClCompile>
+    <ClCompile Include="0717_03.cpp">
+      <Filter>homework</Filter>
+    </ClCompile>
+    <ClCompile Include="0717_02.cpp">
+      <Filter>homework</Filter>
+    </ClCompile>
+    <ClCompile Include="0717_01.cpp">
+      <Filter>homework</Filter>
+    </ClCompile>
+    <ClCompile Include="Example_03.cpp">
+      <Filter>Lesson\03. 연산자+ 반복문</Filter>
+    </ClCompile>
+    <ClCompile Include="0718_01.cpp">
+      <Filter>homework</Filter>
+    </ClCompile>
+    <ClCompile Include="0718_02.cpp">
+      <Filter>homework</Filter>
+    </ClCompile>
+    <ClCompile Include="0718_03.cpp">
+      <Filter>homework</Filter>
+    </ClCompile>
+    <ClCompile Include="0718_04.cpp">
+      <Filter>homework</Filter>
+    </ClCompile>
+    <ClCompile Include="0718_05.cpp">
+      <Filter>homework</Filter>
+    </ClCompile>
+    <ClCompile Include="0719_01.cpp">
+      <Filter>homework</Filter>
+    </ClCompile>
+    <ClCompile Include="0719_02.cpp">
+      <Filter>homework</Filter>
+    </ClCompile>
+    <ClCompile Include="Example_04_B.cpp">
+      <Filter>Lesson\04. 조건문</Filter>
+    </ClCompile>
+    <ClCompile Include="Example_04.cpp">
+      <Filter>Lesson\04. 조건문</Filter>
+    </ClCompile>
+    <ClCompile Include="Example_05.cpp">
+      <Filter>Lesson\05. 함수 + 변/상수 + 전처리기</Filter>
+    </ClCompile>
+    <ClCompile Include="Example_05_b.cpp">
+      <Filter>Lesson\05. 함수 + 변/상수 + 전처리기</Filter>
+    </ClCompile>
+    <ClCompile Include="0722_01.cpp">
+      <Filter>homework</Filter>
+    </ClCompile>
+    <ClCompile Include="0722_02.cpp">
+      <Filter>homework</Filter>
+    </ClCompile>
+    <ClCompile Include="Example_06.cpp">
+      <Filter>Lesson\06.배열</Filter>
+    </ClCompile>
+    <ClCompile Include="0723_01.cpp">
+      <Filter>homework</Filter>
+    </ClCompile>
+    <ClCompile Include="Example_07.cpp">
+      <Filter>Lesson\07.삼항연산자 / char / string/오버로딩</Filter>
+    </ClCompile>
+    <ClCompile Include="Example_07_b.cpp">
+      <Filter>Lesson\07.삼항연산자 / char / string/오버로딩</Filter>
+    </ClCompile>
+    <ClCompile Include="Example_07_c.cpp">
+      <Filter>Lesson\07.삼항연산자 / char / string/오버로딩</Filter>
+    </ClCompile>
+    <ClCompile Include="Example_07_d함수오버로딩.cpp">
+      <Filter>Lesson\07.삼항연산자 / char / string/오버로딩</Filter>
+    </ClCompile>
+    <ClCompile Include="0724_01.cpp">
+      <Filter>homework</Filter>
+    </ClCompile>
+    <ClCompile Include="0724_02.cpp">
+      <Filter>homework</Filter>
+    </ClCompile>
+    <ClCompile Include="C_enum.cpp">
+      <Filter>Lesson\08.</Filter>
+    </ClCompile>
+    <ClCompile Include="enum class.cpp">
+      <Filter>Lesson\08.</Filter>
+    </ClCompile>
+    <ClCompile Include="구조체.cpp">
+      <Filter>Lesson\08.</Filter>
+    </ClCompile>
+    <ClCompile Include="0725_01.cpp">
+      <Filter>homework</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
