@@ -126,5 +126,8 @@
     <ClCompile Include="0725_01.cpp">
       <Filter>homework</Filter>
     </ClCompile>
+    <ClCompile Include="TEST_0726.cpp">
+      <Filter>homework</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
