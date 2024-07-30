@@ -1,7 +1,9 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
+void shuffle(int arr[]);
+void dimensional1(int arr[]);
+void dimensional2(int bingo[4][4], int arr[]);
 void main()
 {
 	int number;
@@ -10,32 +12,17 @@ void main()
 	string star = "*";
 	
 	int arr[16];
-	for (int i = 0; i < 16; i++)
-	{
-		arr[i] = i + 1;
-	}
-	srand(time(NULL));
-	for (int i = 0; i < 1000; i++)
-	{
-		int d1 = rand() % 16;
-		int d2 = rand() % 16;
-		int d3 = arr[d1];
-		arr[d1] = arr[d2];
-		arr[d2] = d3;
-		
-	}
-	int k = 0;
-	for (int i = 0; i < 4; i++)
-	{
-		for (int j = 0; j < 4; j++)
-		{
-			
-			bingo[i][j]=arr[k];
-			k++;
-			
-		}
-	}
+	//1차원 배열로 16개 넣기
+	dimensional1(arr);
+	//1차원 배열 16개 셔플
+	shuffle(arr);
+
+
+	//1차원배열 2차원배열에 넣기
+	dimensional2(bingo, arr); 
 	
+
+	// 빙고판 출력
 		for (int i = 0; i < 4; i++)
 		{
 			for (int j = 0; j < 4; j++)
@@ -47,6 +34,7 @@ void main()
 			cout << endl;
 		}
 		
+		//사용자 입력시 같은거면 -1로 바꾸고 별로 출력
 		while (true)
 		{
 			
@@ -127,4 +115,38 @@ void main()
 		
 	
 	
+}
+void shuffle(int arr[])
+{
+	srand(time(NULL));
+	for (int i = 0; i < 1000; i++)
+	{
+		int d1 = rand() % 16;
+		int d2 = rand() % 16;
+		int d3 = arr[d1];
+		arr[d1] = arr[d2];
+		arr[d2] = d3;
+
+	}
+}
+void dimensional1(int arr[])
+{
+	for (int i = 0; i < 16; i++)
+	{
+		arr[i] = i + 1;
+	}
+}
+void dimensional2(int bingo[4][4], int arr[])
+{
+	int k = 0;
+	for (int i = 0; i < 4; i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+
+			bingo[i][j] = arr[k];
+			k++;
+
+		}
+	}
 }

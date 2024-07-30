@@ -82,36 +82,40 @@ struct family
     string name;
     int age;
 
-    family()
+    family(string _relation, string _name, int _age)
     {
-        relation = "부";
-        name = "임정원";
+        relation = _relation;
+        name = _name;
+        age = _age;
     }
+   
 };
 
 int main()
 {  //구조체 변수
-    
-    /*family father;
-    cout << relation << endl;
-    cout;*/
-    //Point p;
-    //p.x = 10;
-    //p.y = 20;
+    family father = family("부", "임정원", 62);
+    family mother = family("모", "조희영", 61);
+    family sister = family("동생", "임지명", 29);
+    cout << father.relation << endl;
+    cout << father.name << endl;
+    cout << father.age << endl;
+    Point p;
+    p.x = 10;
+    p.y = 20;
 
-    //cout << "구조체 p.x의 값 : " << p.x << endl;
-    //cout << "구조체 p.y의 값 : " << p.y << endl;
-    ////P.Print();
+    cout << "구조체 p.x의 값 : " << p.x << endl;
+    cout << "구조체 p.y의 값 : " << p.y << endl;
+    //P.Print();
 
     //Point p1 = { 50, 120 }; // 생성과 동시에 초기화
 
-    Monster mons;
+    Monster monster;
     Monster dragon = Monster("드래곤", 250, 100);
     Monster slime = Monster("슬라임", 10, 3);
     
-    cout << mons.name << endl;
-    cout << mons.hp << endl;
-    cout << mons.mp << endl;
+    cout << monster.name << endl;
+    cout << monster.hp << endl;
+    cout << monster.mp << endl;
 
     cout << "====================================" << endl;
     cout << dragon.name << endl;
