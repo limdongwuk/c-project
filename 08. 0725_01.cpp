@@ -148,12 +148,12 @@ void main()
     for (int i = 0; i < 1000; i++)
     {
 
-        int dest = rand() % 52;
-        int sour = rand() % 52;
-
-        int temp = arr[dest];
-        arr[dest] = arr[sour];
-        arr[sour] = temp;
+        int dest = rand() % 52;  // 3
+        int sour = rand() % 52;  //4
+        
+        int temp = arr[dest];  // int tmep = 4 = arr[3]
+        arr[dest] = arr[sour]; // 5 = 
+        arr[sour] = temp;  
     }
     for (int i = 0; i < 52; ++i)
     {

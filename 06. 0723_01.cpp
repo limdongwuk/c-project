@@ -24,72 +24,67 @@ using namespace std;
 
 void main()
 {
-    int com[3];
-    int player[3];
-    int j = 1;
+    
 
     srand(time(NULL));
-    while (j < 4) //j는 반복횟수
-    {
-      
-        for (int i = 0; i < 3; i++)
-        {
-            com[i] = rand() % 10 + 1;
-            cout << com[i] << " ";
-        }
-        //컴퓨터 랜덤값3개
+	int Compu[3];
+	int p[3];
+	int strikecount = 0;
+	int ballcount = 0;
+	int outcount = 0;
+	while (outcount < 3)
+	{
+		strikecount = 0;
+		ballcount = 0;
+		srand(time(NULL));
+		cout << "컴퓨터가 입력한 수 : ";
+		for (int i = 0; i < 3; i++)
+		{
+			Compu[i] = rand() % 10 + 1;
+			cout << Compu[i] << " ";
+		}
+		cout << endl;
+		/*	com[3] = rand() % 10 + 1;*/
+			//배열을 이렇게 하면 인덱스012안에 랜덤값이 들어가는게 아니고 인덱스 3에 랜덤값이 들어가게 하는 방법임 
+		for (int i = 0; i < 3; i++)
+		{
+			cin >> p[i];
 
-        cout << endl;
+		}
 
-        for (int i = 0; i < 3; i++)
-        {
+		cout << "내가 입력한 수 : ";
+		for (int i = 0; i < 3; i++)
+		{
+			cout << p[i] << " ";
 
-            cin >> player[i];
+		}
+		cout << endl;
 
-            while (player[i] < 0 || player[i]>10)
-            {
-                cout << "1~10까지만 입력하세요" << endl;
-                cin >> player[i];
+		for (int i = 0; i < 3; i++)
+		{
+			if (Compu[i] == p[i])
+			{
+				strikecount++;
+			}
 
-            }
+			for (int j = 0; j < 3; j++)
+			{
+				if (Compu[i] == p[j] && i != j)
+				{
+					ballcount++;
+				}
+			}
+		}
 
-        }
+		cout << strikecount << "스트라이크 입니다." << endl;
+		cout << ballcount << "볼 입니다." << endl;
 
-        // 사람 3개입력 과정
-
-        for (int i = 0; i < 3; i++)
-        {
-            cout << player[i] << " ";
-        }
-        //플레이어 배열 값 보여주기
-
-
-        for (int i = 0; i < 3; ++i)
-        {
-            for (int j = 0; j < 3; ++j)
-            {
-                if (com[i] == player[j])
-                {
-                  
-                }
-            }
-            
-           
-        }
-        if ((player[0] == com[0]) && (player[1] == com[1]) && (player[2] == com[2])) //player[i] == com[i] 하면안되는 이유 모르겠음
-        {
-            cout << "3strike = " << j << "out" << endl;
-            j += 1;
-
-        }
-        // 배열값이 모두 같을때 1out 
-        else
-        {
-            cout << "not out" << endl;
-        }
-
-    }
-    cout << "게임이 종료되었습니다" << endl;
+		if (strikecount == 3)
+		{
+			outcount++;
+		}
+		cout << outcount << "아웃입니다" << endl;
+	}
 }
 
 

@@ -87,3 +87,4 @@ void StringErase()
     str.erase(5,7);
     cout << "erase ¹®ÀÚ¿­ : " << str << endl;
 }
+

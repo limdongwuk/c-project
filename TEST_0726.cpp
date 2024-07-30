@@ -178,9 +178,6 @@ void main()
         {
             cout << result2[i] << " ";
         }
-
-
-
     }
  
     

@@ -25,18 +25,8 @@ typedef unsigned long long uint64_t; // 복잡한 자료형의 간소화 버전
 using Integer = int;
 
 
-struct family
-{
-    string relation;
-    string name;
-    
 
-       family()
-        {
-        relation = "부";
-        name = "임정원";
-        
-        };
+       
 
 struct Student
 {
@@ -52,6 +42,7 @@ struct Student
     }
 
 };
+
 
 struct Point
 {
@@ -85,25 +76,42 @@ struct Monster
     }
 };
 
+struct family
+{
+    string relation;
+    string name;
+    int age;
+
+    family()
+    {
+        relation = "부";
+        name = "임정원";
+    }
+};
+
 int main()
 {  //구조체 변수
-    Point p;
-    p.x = 10;
-    p.y = 20;
+    
+    /*family father;
+    cout << relation << endl;
+    cout;*/
+    //Point p;
+    //p.x = 10;
+    //p.y = 20;
 
-    cout << "구조체 p.x의 값 : " << p.x << endl;
-    cout << "구조체 p.y의 값 : " << p.y << endl;
-    //P.Print();
+    //cout << "구조체 p.x의 값 : " << p.x << endl;
+    //cout << "구조체 p.y의 값 : " << p.y << endl;
+    ////P.Print();
 
-    Point p1 = { 50, 120 }; // 생성과 동시에 초기화
+    //Point p1 = { 50, 120 }; // 생성과 동시에 초기화
 
-    Monster monster;
+    Monster mons;
     Monster dragon = Monster("드래곤", 250, 100);
     Monster slime = Monster("슬라임", 10, 3);
     
-    cout << monster.name << endl;
-    cout << monster.hp << endl;
-    cout << monster.mp << endl;
+    cout << mons.name << endl;
+    cout << mons.hp << endl;
+    cout << mons.mp << endl;
 
     cout << "====================================" << endl;
     cout << dragon.name << endl;
@@ -112,7 +120,7 @@ int main()
 
     cout << "====================================" << endl;
 
-
+   
 }
 
 void Point::print()
@@ -123,13 +131,7 @@ void Point::print()
 //지금 해볼 것.
 //구조체를 활용해서 가족관계를 출력해보세요.
 
-struct family
-{
-    string relation;
-    string name;
-    string age;
 
-};
 
 /*
 카드게임 만들기

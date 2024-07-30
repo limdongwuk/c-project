@@ -31,7 +31,7 @@ enum class SkillType
     Lighting
 
 };
-void UseSkill(SkillType skil1);
+void UseSkill(SkillType skill);
 
 int main()
 {
