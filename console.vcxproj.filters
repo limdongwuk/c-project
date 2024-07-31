@@ -144,5 +144,8 @@
     <ClCompile Include="0726빙고.cpp">
       <Filter>homework</Filter>
     </ClCompile>
+    <ClCompile Include="0726슬라이드.cpp">
+      <Filter>homework</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
