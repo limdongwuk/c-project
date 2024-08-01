@@ -31,6 +31,9 @@
     <Filter Include="Lesson\08.">
       <UniqueIdentifier>{dfb423c7-f448-47d4-ade5-9795cb82d50d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Lesson\09.">
+      <UniqueIdentifier>{006ce537-5524-425c-8005-a749f07fbd82}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Example_01.cpp">
@@ -128,6 +131,12 @@
     </ClCompile>
     <ClCompile Include="TEST_0726.cpp">
       <Filter>homework</Filter>
+    </ClCompile>
+    <ClCompile Include="22.cpp">
+      <Filter>Lesson\09.</Filter>
+    </ClCompile>
+    <ClCompile Include="33.cpp">
+      <Filter>Lesson\09.</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
