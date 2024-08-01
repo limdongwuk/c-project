@@ -138,5 +138,8 @@
     <ClCompile Include="33.cpp">
       <Filter>Lesson\09.</Filter>
     </ClCompile>
+    <ClCompile Include="구조체를 활용한 학생정보 출력.cpp">
+      <Filter>homework</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -43,14 +43,14 @@ void main()
 	//포인터에 1을 더하면 그 다음 원소를 카리키고
 	//2를 더하면 그 다음다음 원소를 가리키게 된다.
 
-	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+	int arr1[10] = { 1,2,3,4,5,6,7,8,9,10 };
 	int* parr;//정수형 포인터
 	int i;
 	//parr포인터를 배열의 첫번째 요소의 주소를 저장
-	parr = &arr[0];
+	parr = &arr1[0];
 	for (i = 0; i < 10; i++)
 	{
-		cout << "arr의 주소" << &arr[i] << endl;
+		cout << "arr1의 주소" << &arr1[i] << endl;
 		cout << "parr의 값 : " << (parr + i) << endl;
 	}
  #pragma endregion
@@ -60,24 +60,26 @@ void main()
 	cout << "num의 값 : " << num << endl;
 	cout << "num의 주소값 : " << &num << endl;
 
+
+
 	cout << "======================" << endl;
 	int num1 = 30;
 	Address(&num1);
 	cout << "num1의 값 : " << num1 << endl;
 	cout << "num1의 주소값 : " << &num1 << endl;
+	cout << "======================" << endl;
 
 	int num2 = 30;
 	Reference(num2);
-	cout << "num의 값 : " << num2 << endl;
+	cout << "num2의 값 : " << num2 << endl;
 	cout << "num2의 주소값 : " << &num2 << endl;
+	
+	int num3 = 10;
+	int num4 = 20;
 
-
-	int num1 = 10;
-	int num2 = 20;
-
-	cout << "스왑전 데이터" << num1 << " , " << num2 << endl;
-	Swap(num1, num2);
-	cout << "스왑후 데이터" << num1 << " , " << num2 << endl; //복사 형태라 값이 안바뀜
+	cout << "스왑전 데이터" << num3 << " , " << num4 << endl;
+	Swap(num3, num4);
+	cout << "스왑후 데이터" << num3 << " , " << num4 << endl; //복사 형태라 값이 안바뀜
 
 	int swapAddNum1 = 10;
 	int swapAddNum2 = 20;
@@ -85,7 +87,9 @@ void main()
 	SwapAddress(&swapAddNum1, &swapAddNum2);
 	cout << "스왑후 데이터" << swapAddNum1 << " , " << swapAddNum2 << endl;
 
-	
+	cout << "스왑전 데이터" << swapAddNum1 << " , " << swapAddNum2 << endl;
+	SwapReference(swapAddNum1, swapAddNum2);
+	cout << "스왑후 데이터" << swapAddNum1 << " , " << swapAddNum2 << endl;
 
 	//void Pointer
 	//자료형이 없는 포인터 변수
@@ -104,8 +108,8 @@ void main()
 	//vp = &c;
 	//*vp = 1; //데이터 타입이 없어서 안됨(우리가 알고 있는 방법으로는 불가능)
 	//(자료형*)을 붙임으로써 가능하게 함 : 강제 형변환
-	*(int*)vp = 5;
-	cout << *(int*)vp << endl;
+	//*(int*)vp = 5;
+	//cout << *(int*)vp << endl;
 
 	/*과제
 정적할당과 동적할당의 차이점 조사해서 기록하세요.
@@ -176,7 +180,9 @@ void SwapAddress(int* a, int* b)
 
 void SwapReference(int& a, int& b)
 {
-	//이건 너네들이 만들어
+	int temp = a;
+	a = b;
+	b = temp;
 }
 
 
