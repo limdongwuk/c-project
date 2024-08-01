@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <iomanip>
 using namespace std;
 void shuffle(int arr[]);
 void dimensional1(int arr[]);
@@ -30,7 +29,7 @@ void main()
 			{
 			
 
-				cout << setw(5)<< bingo[i][j];
+				cout << bingo[i][j] << " ";
 			}
 			cout << endl;
 		}
@@ -40,7 +39,6 @@ void main()
 		{
 			
 				cin >> number;
-				system("cls");
 				for (int i = 0; i < 4; i++)
 				{
 					for (int j = 0; j < 4; j++)
@@ -52,16 +50,16 @@ void main()
 						}
 						if (bingo[i][j] == -1)
 						{
-							cout << setw(5) << star << " ";
+							cout << star << " ";
 						}
 						else
 						{
-							cout << setw(5) <<bingo[i][j] << " ";
+							cout << bingo[i][j] << " ";
 						}
 					}
 					cout << endl;
 				}
-				
+			
 			bingocount = 0;
 			
 			
@@ -118,15 +116,6 @@ void main()
 	
 	
 }
-
-void dimensional1(int arr[])
-{
-	for (int i = 0; i < 16; i++)
-	{
-		arr[i] = i + 1;
-	}
-}
-
 void shuffle(int arr[])
 {
 	srand(time(NULL));
@@ -137,6 +126,14 @@ void shuffle(int arr[])
 		int d3 = arr[d1];
 		arr[d1] = arr[d2];
 		arr[d2] = d3;
+
+	}
+}
+void dimensional1(int arr[])
+{
+	for (int i = 0; i < 16; i++)
+	{
+		arr[i] = i + 1;
 	}
 }
 void dimensional2(int bingo[4][4], int arr[])
