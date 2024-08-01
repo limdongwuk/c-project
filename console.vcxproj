@@ -172,6 +172,8 @@
     <ClCompile Include="0726슬라이드.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="22.cpp" />
+    <ClCompile Include="33.cpp" />
     <ClCompile Include="TEST_0726복습.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
