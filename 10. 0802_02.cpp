@@ -22,8 +22,16 @@ private:
 };
 
 class Monster
-{   
-public:
+{
+public: 
+    void monsterInfo();
+    Monster()
+    {
+        name = "오크";
+        attack = 12;
+        defence = 1;
+        hp = 80;
+    }
 private:
     string name;
     int attack;
@@ -31,22 +39,25 @@ private:
     int hp;
 };
 
+class Battle
+{
+public:
+    void battle();
 
+private:
 
-
-
+};
 
 void main()
 {
     Player p;
-    p.Chiocecharactorclass();
-    p.PlayerInfo();
-   
-
-    
-
-
-    int a = 0;
+    Player* pl = new Player;
+    pl->Chiocecharactorclass();
+    pl->PlayerInfo();
+    delete pl;
+    Monster m;
+    Monster* mo = new Monster;
+    mo->monsterInfo();
 }
 
 void Player::Chiocecharactorclass()
@@ -85,5 +96,17 @@ void Player::PlayerInfo()
     cout << "공격력 : "<<attack << endl;
     cout << "방어력 : "<<defence << endl;
     cout << "HP : "<<hp << endl;
+}
+
+void Monster::monsterInfo()
+{
+    cout << "몬스터명 : " << name << endl;
+    cout << "공격력 : " << attack << endl;
+    cout << "방어력 : " << defence << endl;
+    cout << "HP : " << hp << endl;
+}
+
+void Battle::battle()
+{
 
 }

@@ -32,12 +32,6 @@ public:
 
 };
 
-class Player
-{
-public :
-private :
-};
-
 void main()
 {
 	

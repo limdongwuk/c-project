@@ -22,7 +22,7 @@ public:
     void SetName(const string& name)
     {
         //Person::name = name; == this ->name = name;          같은 것
-        this->name = name; //내자신을 가리키는 포인터 클래스의 멤버변수에서 매개변수와 이름이 같을때 사용 (디스가 가르키는 네임은 std::string name이다)
+        this->name=name //내자신을 가리키는 포인터 클래스의 멤버변수에서 매개변수와 이름이 같을때 사용 (디스가 가르키는 네임은 std::string name이다)
         
     }
 

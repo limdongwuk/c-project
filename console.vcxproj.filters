@@ -34,6 +34,12 @@
     <Filter Include="homework\연습">
       <UniqueIdentifier>{9f91cc5b-49ee-4fae-8cf9-15189bff0ac5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Lesson\09.포인터">
+      <UniqueIdentifier>{6e365494-a795-46c1-a907-8ae333f8f1a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lesson\10.클래스">
+      <UniqueIdentifier>{a296fa10-83dd-4683-bf53-11b0f9d7d310}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Example_01.cpp">
@@ -146,6 +152,39 @@
     </ClCompile>
     <ClCompile Include="0726슬라이드.cpp">
       <Filter>homework</Filter>
+    </ClCompile>
+    <ClCompile Include="22.cpp">
+      <Filter>Lesson\09.포인터</Filter>
+    </ClCompile>
+    <ClCompile Include="33.cpp">
+      <Filter>Lesson\09.포인터</Filter>
+    </ClCompile>
+    <ClCompile Include="1.cpp">
+      <Filter>Lesson\10.클래스</Filter>
+    </ClCompile>
+    <ClCompile Include="2.constructor%28생성자%29.cpp">
+      <Filter>Lesson\10.클래스</Filter>
+    </ClCompile>
+    <ClCompile Include="3.소멸자.cpp">
+      <Filter>Lesson\10.클래스</Filter>
+    </ClCompile>
+    <ClCompile Include="4.cpp">
+      <Filter>Lesson\10.클래스</Filter>
+    </ClCompile>
+    <ClCompile Include="10. 0802_02.cpp">
+      <Filter>homework</Filter>
+    </ClCompile>
+    <ClCompile Include="09. 0801_01.cpp">
+      <Filter>homework</Filter>
+    </ClCompile>
+    <ClCompile Include="10. 0802_01.cpp">
+      <Filter>homework</Filter>
+    </ClCompile>
+    <ClCompile Include="랜덤함수 클래스.cpp">
+      <Filter>homework\연습</Filter>
+    </ClCompile>
+    <ClCompile Include="슬라이드 함수.cpp">
+      <Filter>homework\연습</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
