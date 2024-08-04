@@ -5,7 +5,10 @@ using namespace std;
 
 //멤버변수는 private
 //생성자, 소멸자, 멤버함수는 public
-//접근자(getter), 설정자(setter)
+//접근자(getter),
+// 접근자(accessor) 함수는 클래스의 private 또는 protected 멤버 변수의 값을 읽을 수 있도록 해주는 함수
+//  설정자(setter)
+// 설정자(mutator) 함수는 클래스의 private 또는 protected 멤버 변수를 수정할 수 있게 해주는 함수
 //프라이빗으로 설정된 내용을 외부에서 접근할수있게해주는것
 class Person
 {
@@ -22,7 +25,7 @@ public:
     void SetName(const string& name)
     {
         //Person::name = name; == this ->name = name;          같은 것
-        this->name=name //내자신을 가리키는 포인터 클래스의 멤버변수에서 매개변수와 이름이 같을때 사용 (디스가 가르키는 네임은 std::string name이다)
+        this->name = name; //내자신을 가리키는 포인터 클래스의 멤버변수에서 매개변수와 이름이 같을때 사용 (디스가 가르키는 네임은 std::string name이다)
         
     }
 

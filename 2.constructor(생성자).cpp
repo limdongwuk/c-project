@@ -83,7 +83,7 @@ void main()
 
 
     Player* player1 = new Player("Ä«¸®³ª", 10, 50);
-    player->PrintInfo();
+    player1->PrintInfo();
 
     delete player;
     player = nullptr;

@@ -29,7 +29,7 @@ public:
 	void slideboard();
 
 	void slidecheck();
-
+	
 };
 
 void main()
@@ -47,10 +47,13 @@ void main()
 	
 void slidegame::OneDimension()
 {
+	
+	
 	for (int i = 0; i < 25; i++)
 	{
 		arr1[i] = i + 1;
 	}
+	
 }
 void slidegame::shuffle()
 {
@@ -93,7 +96,9 @@ void slidegame::slideboard()
 				cout << setw(6) << arr[i][j];
 			}
 		}cout << endl;
+		
 	}
+
 }
 
 void slidegame::slidecheck()

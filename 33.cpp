@@ -69,10 +69,24 @@ void main()
 	cout << "num1의 주소값 : " << &num1 << endl;
 	cout << "======================" << endl;
 
-	int num2 = 30;
+	void Address(int* n)
+	{
+		*n = 10;
+		cout << "n의 값 : " << n << endl;
+		cout << "n의 주소값 : " << &n << endl;
+	}
+
+	int num2 = 30; //num2의 주소가 
 	Reference(num2);
 	cout << "num2의 값 : " << num2 << endl;
 	cout << "num2의 주소값 : " << &num2 << endl;
+
+	void Reference(int& n)
+	{
+		n = 10;
+		cout << "n의 값 : " << n << endl;
+		cout << "n의 주소값 : " << &n << endl;
+	}
 	
 	int num3 = 10;
 	int num4 = 20;
