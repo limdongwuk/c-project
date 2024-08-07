@@ -9,15 +9,14 @@ private:
     int Direction;
     int reaction;
     int input;
-public:
-    
-    GameScene( int _direction, int _reaction, LostArkClass* _character);
-    ~GameScene();
     void CharacterSelect();
     void AttackDirection();
     void ReactionChoice();
     void React();
-    
+public:
+    GameScene();
+    ~GameScene();
+    void GameStart();
     
     
 };

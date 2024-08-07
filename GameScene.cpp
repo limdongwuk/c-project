@@ -1,5 +1,4 @@
 #include "GameScene.h"
-
 #include "BattleMaster.h"
 #include "Blade.h"
 #include "GunSlinger.h"
@@ -9,34 +8,43 @@
 #define RIGHT 77
 #define LEFT 75
 
-GameScene::GameScene(int _direction, int _reaction, LostArkClass* _character)
-    : Direction(_direction), reaction(_reaction), CL(_character), input(0)
+GameScene::GameScene()
+    : Direction(0), reaction(0),CL(nullptr),input(0)
 {
     std::cout << "마수군단장 발탄의 공격에 대응하세요" << std::endl;
 }
 
 GameScene::~GameScene()
 {
+
+    delete CL;
+}
+
+void GameScene::GameStart()
+{
+    CharacterSelect();
+    AttackDirection();
+    ReactionChoice();
+    React();
 }
 
 
 
 void GameScene::CharacterSelect()
 {
-    LostArkClass* CL = nullptr;
     CL->choice();
     int num;
     std::cin >> num;
     switch (num)
     {
     case 1:
-        CL = new BattleMaster("배틀마스터", 12000, 8000, 9000, 1400);
+        CL = new BattleMaster("배틀마스터", 12000, 8000, 9000, 100);
         break;
     case 2:
-        CL = new Blade("블레이드", 13000, 8000, 12000, 1300);
+        CL = new Blade("블레이드", 13000, 8000, 12000, 120);
         break;
     case 3:
-        CL = new GunSlinger("건슬링어", 10000, 8000, 7000, 700);
+        CL = new GunSlinger("건슬링어", 10000, 8000, 7000, 80);
         break;
     }
 
@@ -50,7 +58,7 @@ void GameScene::CharacterSelect()
 }
 
 void GameScene::AttackDirection()
-{
+{   
     srand(time(NULL));
     Direction = rand() % 4;
     switch (Direction)
@@ -97,19 +105,19 @@ void GameScene::React()
 
             if (Direction == 0 && input == RIGHT)
             {
-                std::cout << "회피에 성공하였습니다" << std::endl;
+                std::cout <<CL->getName()<<"가 회피에 성공하였습니다" << std::endl;
             }
             else if (Direction == 1 && input == LEFT)
             {
-                std::cout << "회피에 성공하였습니다" << std::endl;
+                std::cout << CL->getName() << "가 회피에 성공하였습니다" << std::endl;
             }
             else if (Direction == 2 && input == DOWN)
             {
-                std::cout << "회피에 성공하였습니다" << std::endl;
+                std::cout << CL->getName() << "가 회피에 성공하였습니다" << std::endl;
             }
             else if (Direction == 3 && input == UP)
             {
-                std::cout << "회피에 성공하였습니다" << std::endl;
+                std::cout << CL->getName() << "가 회피에 성공하였습니다" << std::endl;
             }
             else
             {
@@ -121,8 +129,9 @@ void GameScene::React()
         break;
     case 2:
         std::cout << "막기에 성공하였습니다." << std::endl;
+        std::cout << "피격시 1200의 데미지를 받았습니다." << std::endl;
         
-        std::cout <<"방어력 X 3 : " << "남은 Hp : " <<  std::endl;
+        std::cout <<" 방어력 X 3 = "<<CL->getDefence() * 3 << "남은 Hp : " << CL->SetHp(3) << std::endl;
         break;
     }
     

@@ -55,3 +55,8 @@ void BattleMaster::classattack() const
     std::cout << "배틀마스터가 주먹으로 가격하였습니다." << std::endl;
 }
 
+std::string BattleMaster::getName()
+{
+    return name;
+}
+

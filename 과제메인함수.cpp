@@ -9,16 +9,8 @@
 
 void main()
 {
-  
-    GameScene* gameScene = new GameScene(0, 0);
-    gameScene->AttackDirection();
-    gameScene->ReactionChoice();
-    gameScene->React();
+    GameScene* gamescene = new GameScene;
+    gamescene->GameStart();
+    delete gamescene;
     
-    delete gameScene;
-    std::cout << std::endl;
- 
-
-    
-
 }

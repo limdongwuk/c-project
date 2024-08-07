@@ -58,3 +58,8 @@ void Blade::classattack() const
     std::cout << "블레이드가가 칼로 가격하였습니다." << std::endl;
 }
 
+std::string Blade::getName()
+{
+    return name;
+}
+

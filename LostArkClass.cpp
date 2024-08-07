@@ -15,23 +15,27 @@ void LostArkClass::Move()
     input = _getch();
     if (input = 224)
     {
-        input = _getch();
+        input = _getch(); 
     }
     if (input == UP)
     {
         std::cout << " 캐릭터가 위쪽으로 이동합니다." << std::endl;
+        std::cout << " 이동이 발각되어 200의 데미지를 입습니다." << std::endl;
     }
     else if (input == DOWN)
     {
         std::cout << " 캐릭터가 아래쪽으로 이동합니다." << std::endl;
+        std::cout << " 이동이 발각되어 200의 데미지를 입습니다." << std::endl;
     }
     else if (input == RIGHT)
     {
         std::cout << " 캐릭터가 오른쪽으로 이동합니다." << std::endl;
+        std::cout << " 이동이 발각되어 200의 데미지를 입습니다." << std::endl;
     }
     else if (input == LEFT)
     {
         std::cout << " 캐릭터가 왼쪽으로 이동합니다." << std::endl;
+        std::cout << " 이동이 발각되어 200의 데미지를 입습니다." << std::endl;
     }
 }
 
@@ -39,6 +43,27 @@ void LostArkClass::choice()
 {
     std::cout << "직업을 선택하세요.1(배마) / 2(블레이드) / 3(건슬링어)" << std::endl;
     
+}
+
+std::string LostArkClass::getName()
+{
+    return name;
+}
+
+int LostArkClass::getDefence()
+{
+    return Defence;
+}
+
+int LostArkClass::getHp()
+{
+    return Hp;
+}
+
+int LostArkClass::SetHp(int Defence)
+{
+    Hp+=(Defence*3-1200);
+    return Hp;
 }
 
 

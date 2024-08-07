@@ -20,7 +20,7 @@ protected:
   
 
 public : 
-    LostArkClass() {};
+    LostArkClass();
     LostArkClass(const std::string& _name, int _Hp, int _Attack, int _Defence);
     ~LostArkClass();
     virtual void status() const = 0;
@@ -28,5 +28,8 @@ public :
     virtual void Damage(int _Attack) = 0;
     void choice();
     virtual void classattack() const = 0;
-   
+    std::string getName();
+    int getDefence();
+    int getHp();
+    int SetHp(int Defence);
 };

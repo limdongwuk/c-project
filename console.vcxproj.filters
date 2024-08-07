@@ -291,6 +291,9 @@
     <ClCompile Include="GameScene.cpp">
       <Filter>homework\12. 0806_03\CPP</Filter>
     </ClCompile>
+    <ClCompile Include="테스트문제.cpp">
+      <Filter>homework\연습</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PvM_game.h">

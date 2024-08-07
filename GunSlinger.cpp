@@ -48,13 +48,18 @@ void GunSlinger::Move()
 
 void GunSlinger::Damage(int _Attack)
 {
-    Hp -= (Defence - _Attack);
+    Hp += (Defence - _Attack);
     std::cout << _Attack << "만큼의 공격을 받았습니다. " << std::endl << "남은 Hp : " << Hp << "입니다" << std::endl;
 }
 
 void GunSlinger::classattack() const
 {
     std::cout << "건슬링어가 총으로 가격하였습니다." << std::endl;
+}
+
+std::string GunSlinger::getName()
+{
+    return name;
 }
 
 
