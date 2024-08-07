@@ -10,5 +10,6 @@ public:
     void Move() override;
     void Damage(int _Attack) override;
     void classattack()const override;
+    
 };
 

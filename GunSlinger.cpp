@@ -3,6 +3,7 @@
 
 
 
+
 GunSlinger::GunSlinger(const std::string& _name, int _Hp, int _Agility, int _Attack, int _Defence)
          :LostArkClass(_name, _Hp, _Attack, _Defence), Agility(_Agility)
 {

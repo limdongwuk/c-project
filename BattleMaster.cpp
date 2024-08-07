@@ -1,5 +1,6 @@
 #include "Battlemaster.h"
 
+
 BattleMaster::BattleMaster(const std::string& _name, int _Hp, int _Agility, int _Attack, int _Defence)
     :LostArkClass(_name, _Hp, _Attack, _Defence), Agility(_Agility)
 {
@@ -53,3 +54,4 @@ void BattleMaster::classattack() const
 {
     std::cout << "배틀마스터가 주먹으로 가격하였습니다." << std::endl;
 }
+

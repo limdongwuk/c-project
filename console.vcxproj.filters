@@ -43,15 +43,6 @@
     <Filter Include="Lesson\11.static+상속">
       <UniqueIdentifier>{0796e78c-4473-48ba-8ac7-82e01e19f360}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Lesson\12. 가상함수">
-      <UniqueIdentifier>{311d4e64-d1f7-42d9-971e-a4cb0f013ca3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Lesson\12. 가상함수\abstract%28추상클래스%29">
-      <UniqueIdentifier>{3b635b1a-47c9-4c49-9ab1-d4af5a0da265}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Lesson\12. 가상함수\베히클 부모자식">
-      <UniqueIdentifier>{f87bf24c-f939-44f6-866a-f75dc5c9eace}</UniqueIdentifier>
-    </Filter>
     <Filter Include="homework\12. 0806_03">
       <UniqueIdentifier>{d77c3ef0-dbcf-4875-8c10-52d13eafcc72}</UniqueIdentifier>
     </Filter>
@@ -61,8 +52,23 @@
     <Filter Include="homework\12. 0806_03\헤더">
       <UniqueIdentifier>{3f3cd635-1ec1-4188-a3ea-b7556d197f92}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Lesson\13.">
+    <Filter Include="Lesson\13.캐스팅+템플릿">
       <UniqueIdentifier>{51b808de-611f-4229-a0f7-c39e8198d948}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lesson\13.캐스팅+템플릿\헤더">
+      <UniqueIdentifier>{ec2f7654-a5ce-4d54-ae6b-a3e2ed702350}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lesson\13.캐스팅+템플릿\cpp">
+      <UniqueIdentifier>{a27317af-3426-4679-9a30-6ed23ad16d34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lesson\12. 가상함수+동적바인딩+추상클래스">
+      <UniqueIdentifier>{311d4e64-d1f7-42d9-971e-a4cb0f013ca3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lesson\12. 가상함수+동적바인딩+추상클래스\abstract%28추상클래스%29">
+      <UniqueIdentifier>{3b635b1a-47c9-4c49-9ab1-d4af5a0da265}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lesson\12. 가상함수+동적바인딩+추상클래스\베히클 부모자식">
+      <UniqueIdentifier>{f87bf24c-f939-44f6-866a-f75dc5c9eace}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -231,29 +237,29 @@
     <ClCompile Include="PvM_game.cpp">
       <Filter>homework\연습</Filter>
     </ClCompile>
-    <ClCompile Include="111.cpp">
-      <Filter>Lesson\12. 가상함수</Filter>
+    <ClCompile Include="수업내용.cpp">
+      <Filter>Lesson\12. 가상함수+동적바인딩+추상클래스</Filter>
     </ClCompile>
     <ClCompile Include="abstract.cpp">
-      <Filter>Lesson\12. 가상함수\abstract%28추상클래스%29</Filter>
+      <Filter>Lesson\12. 가상함수+동적바인딩+추상클래스\abstract%28추상클래스%29</Filter>
     </ClCompile>
     <ClCompile Include="unt.cpp">
-      <Filter>Lesson\12. 가상함수\abstract%28추상클래스%29</Filter>
+      <Filter>Lesson\12. 가상함수+동적바인딩+추상클래스\abstract%28추상클래스%29</Filter>
     </ClCompile>
     <ClCompile Include="Player1.cpp">
-      <Filter>Lesson\12. 가상함수\abstract%28추상클래스%29</Filter>
+      <Filter>Lesson\12. 가상함수+동적바인딩+추상클래스\abstract%28추상클래스%29</Filter>
     </ClCompile>
     <ClCompile Include="bike.cpp">
-      <Filter>Lesson\12. 가상함수\베히클 부모자식</Filter>
+      <Filter>Lesson\12. 가상함수+동적바인딩+추상클래스\베히클 부모자식</Filter>
     </ClCompile>
     <ClCompile Include="Car.cpp">
-      <Filter>Lesson\12. 가상함수\베히클 부모자식</Filter>
+      <Filter>Lesson\12. 가상함수+동적바인딩+추상클래스\베히클 부모자식</Filter>
     </ClCompile>
     <ClCompile Include="Vehicle.cpp">
-      <Filter>Lesson\12. 가상함수\베히클 부모자식</Filter>
+      <Filter>Lesson\12. 가상함수+동적바인딩+추상클래스\베히클 부모자식</Filter>
     </ClCompile>
     <ClCompile Include="바인딩.cpp">
-      <Filter>Lesson\12. 가상함수\베히클 부모자식</Filter>
+      <Filter>Lesson\12. 가상함수+동적바인딩+추상클래스\베히클 부모자식</Filter>
     </ClCompile>
     <ClCompile Include="과제메인함수.cpp">
       <Filter>homework\12. 0806_03</Filter>
@@ -270,25 +276,40 @@
     <ClCompile Include="Blade.cpp">
       <Filter>homework\12. 0806_03\CPP</Filter>
     </ClCompile>
+    <ClCompile Include="필기.cpp">
+      <Filter>Lesson\13.캐스팅+템플릿</Filter>
+    </ClCompile>
+    <ClCompile Include="캐스팅 코드.cpp">
+      <Filter>Lesson\13.캐스팅+템플릿</Filter>
+    </ClCompile>
+    <ClCompile Include="Template코드.cpp">
+      <Filter>Lesson\13.캐스팅+템플릿</Filter>
+    </ClCompile>
+    <ClCompile Include="Template2 코드.cpp">
+      <Filter>Lesson\13.캐스팅+템플릿</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene.cpp">
+      <Filter>homework\12. 0806_03\CPP</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PvM_game.h">
       <Filter>homework\연습</Filter>
     </ClInclude>
     <ClInclude Include="unt.h">
-      <Filter>Lesson\12. 가상함수\abstract%28추상클래스%29</Filter>
+      <Filter>Lesson\12. 가상함수+동적바인딩+추상클래스\abstract%28추상클래스%29</Filter>
     </ClInclude>
     <ClInclude Include="Player1.h">
-      <Filter>Lesson\12. 가상함수\abstract%28추상클래스%29</Filter>
+      <Filter>Lesson\12. 가상함수+동적바인딩+추상클래스\abstract%28추상클래스%29</Filter>
     </ClInclude>
     <ClInclude Include="bike.h">
-      <Filter>Lesson\12. 가상함수\베히클 부모자식</Filter>
+      <Filter>Lesson\12. 가상함수+동적바인딩+추상클래스\베히클 부모자식</Filter>
     </ClInclude>
     <ClInclude Include="Car.h">
-      <Filter>Lesson\12. 가상함수\베히클 부모자식</Filter>
+      <Filter>Lesson\12. 가상함수+동적바인딩+추상클래스\베히클 부모자식</Filter>
     </ClInclude>
     <ClInclude Include="Vehicle.h">
-      <Filter>Lesson\12. 가상함수\베히클 부모자식</Filter>
+      <Filter>Lesson\12. 가상함수+동적바인딩+추상클래스\베히클 부모자식</Filter>
     </ClInclude>
     <ClInclude Include="BattleMaster.h">
       <Filter>homework\12. 0806_03\헤더</Filter>
@@ -300,6 +321,9 @@
       <Filter>homework\12. 0806_03\헤더</Filter>
     </ClInclude>
     <ClInclude Include="LostArkClass.h">
+      <Filter>homework\12. 0806_03\헤더</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene.h">
       <Filter>homework\12. 0806_03\헤더</Filter>
     </ClInclude>
   </ItemGroup>
