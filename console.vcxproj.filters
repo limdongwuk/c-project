@@ -186,5 +186,16 @@
     <ClCompile Include="슬라이드 함수.cpp">
       <Filter>homework\연습</Filter>
     </ClCompile>
+    <ClCompile Include="PvM main.cpp">
+      <Filter>homework\연습</Filter>
+    </ClCompile>
+    <ClCompile Include="PvM_game.cpp">
+      <Filter>homework\연습</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PvM_game.h">
+      <Filter>homework\연습</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
