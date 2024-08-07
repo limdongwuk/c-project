@@ -19,7 +19,7 @@ public:
     {return attack;}
       int getdefence()const
     {return defence;}
-      ~Player(){}
+    
 private:
     string charactorclass;
     int attack;
@@ -44,7 +44,7 @@ public:
     {return attack;}
       int getdefence()const
     {return defence;}
-    ~Monster(){}
+  
    
         
 private:
@@ -62,7 +62,7 @@ public:
     void PremainHP();
     void MremainHP();
     void mainbattle();
-    ~Battle(){}
+ 
 private:
     
     Player& p;
@@ -84,7 +84,9 @@ void main()
     bt->firstattack();
     bt->mainbattle();
     
-    
+    delete pl;
+    delete mo;
+    delete bt;
 }
 
 void Player::Chiocecharactorclass()
