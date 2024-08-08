@@ -80,9 +80,9 @@ public:
 //is-a : 바나나는 과일이다(상속ok)
 //has-a :바나나는 과일을 포함한다?
 //클래스 안에 클래스명* 변수명;
-class Weapon {};
+class Weapon3 {};
 
-class Sw : public Weapon
+class Sw : public Weapon3
 {
 
 public:
