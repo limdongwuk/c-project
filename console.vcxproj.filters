@@ -70,6 +70,9 @@
     <Filter Include="Lesson\12. 가상함수+동적바인딩+추상클래스\베히클 부모자식">
       <UniqueIdentifier>{f87bf24c-f939-44f6-866a-f75dc5c9eace}</UniqueIdentifier>
     </Filter>
+    <Filter Include="homework\특강">
+      <UniqueIdentifier>{4d32c0f8-4a18-41dc-8901-bb539144c90c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Example_01.cpp">
@@ -294,6 +297,17 @@
     <ClCompile Include="테스트문제.cpp">
       <Filter>homework\연습</Filter>
     </ClCompile>
+    <ClCompile Include="1.vector.cpp" />
+    <ClCompile Include="3.vector.cpp" />
+    <ClCompile Include="Amor.cpp" />
+    <ClCompile Include="Item.cpp" />
+    <ClCompile Include="Shop.cpp" />
+    <ClCompile Include="STL필기.cpp" />
+    <ClCompile Include="2.vector.cpp" />
+    <ClCompile Include="Weapon.cpp" />
+    <ClCompile Include="01.특강_0808_.cpp">
+      <Filter>homework\특강</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PvM_game.h">
@@ -329,5 +343,9 @@
     <ClInclude Include="GameScene.h">
       <Filter>homework\12. 0806_03\헤더</Filter>
     </ClInclude>
+    <ClInclude Include="Amor.h" />
+    <ClInclude Include="Item.h" />
+    <ClInclude Include="Shop.h" />
+    <ClInclude Include="Weapon.h" />
   </ItemGroup>
 </Project>
