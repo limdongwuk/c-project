@@ -29,3 +29,5 @@ void Amor::AmorListSpec()
         amor.push_back(Amor("≥∞¿∫ ¿Â∞©", 400, 20, 400, 400, 0));
         amor.push_back(Amor("√÷∞Ì±ﬁ ¿Â∞©", 800, 40, 800, 800, 0));
 }
+
+

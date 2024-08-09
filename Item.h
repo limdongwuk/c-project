@@ -7,6 +7,8 @@
 #include "Amor.h"
 class Item
 {
+private:
+    class Weapon* WeaponManager;
 protected:
 
     
