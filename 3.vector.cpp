@@ -38,8 +38,18 @@ void main()
         w.Print();
     }
     //벡터에 동적할당 하는 방법 ( 변경점'공백' -> *, weapon->weapon1, -> new 추가)
-    std::vector<Weapon1*> weapon2; //포인터로 동적할당
-    weapon2.push_back(new Weapon1("장검", 50));
+    std::vector<Weapon1*> weapon2; // Weapon1*은 weapon1 클래스의 포인터 타입
+    //weapon2백터는 weapon1 클래스의 객체를 가리키는 포인터를 저장하는 벡터
+    //weapon2는 Weapon1* 타입의 포인터를 저장할 수 있는 std::vector 객체를 생성합니다. 
+    // 이 벡터는 무기 객체의 포인터를 여러 개 저장할 수 있습니다.
+    //new Weapon1("장검", 50) 호출은 Weapon1 객체를 동적으로 생성하고, 이 객체의 메모리 주소를 반환합니다. 이 주소는 Weapon1* 타입의 포인터입니다.
+    //weapon2.push_back(new Weapon1("장검", 50));에서 new Weapon1("장검", 50) 호출로 생성된 Weapon1 객체의 포인터를 push_back 메서드에 전달합니다
+    //
+   /* 전체적인 동작
+        std::vector<Weapon1*> weapon2; 는 Weapon1* 타입의 포인터를 저장할 수 있는 빈 벡터를 생성합니다.
+        new Weapon1("장검", 50) 호출로 Weapon1 객체를 동적으로 생성하고, 객체의 포인터를 반환합니다.
+        weapon2.push_back(...) 호출로 이 포인터를 weapon2 벡터에 추가합니다.*/
+    weapon2.push_back(new Weapon1("장검", 50));//new 연산자는 동적 메모리 할당을 수행하고, Weapon1 클래스의 생성자를 호출하여 새 Weapon1 객체를 생성합니다. 
     weapon2.push_back(new Weapon1("활", 10));
     weapon2.push_back(new Weapon1("단검", 100));
     weapon2.push_back(new Weapon1("집행", 600));
@@ -51,7 +61,7 @@ void main()
     }
     //스마트포인터(auto_ptr(권장x) ,오토피티알 업글버전 -> unique_ptr, shared, shared_ptr, weak_ptr(잘안씀))  
     // : 딜리트 안해줘도 알아서 메모리 관리함(★★★찾아볼것 면접시스마트포인터 써봤냐 질문할 수 있음)
-    std::vector < std::unique_ptr<Weapon1>>weapon2; //굉장히 편리하다 딜리트 안써도되서
+   /* std::vector < std::unique_ptr<Weapon1>>weapon2*/; //굉장히 편리하다 딜리트 안써도되서
     // std::make_unique //객체를 생성하고 동시에 주어진 매개변수를 생성해서 .... 찾아보기!!!!!
 
 
