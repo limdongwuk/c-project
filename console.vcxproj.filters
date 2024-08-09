@@ -55,12 +55,6 @@
     <Filter Include="Lesson\13.캐스팅+템플릿">
       <UniqueIdentifier>{51b808de-611f-4229-a0f7-c39e8198d948}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Lesson\13.캐스팅+템플릿\헤더">
-      <UniqueIdentifier>{ec2f7654-a5ce-4d54-ae6b-a3e2ed702350}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Lesson\13.캐스팅+템플릿\cpp">
-      <UniqueIdentifier>{a27317af-3426-4679-9a30-6ed23ad16d34}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Lesson\12. 가상함수+동적바인딩+추상클래스">
       <UniqueIdentifier>{311d4e64-d1f7-42d9-971e-a4cb0f013ca3}</UniqueIdentifier>
     </Filter>
@@ -70,8 +64,14 @@
     <Filter Include="Lesson\12. 가상함수+동적바인딩+추상클래스\베히클 부모자식">
       <UniqueIdentifier>{f87bf24c-f939-44f6-866a-f75dc5c9eace}</UniqueIdentifier>
     </Filter>
-    <Filter Include="homework\특강">
-      <UniqueIdentifier>{4d32c0f8-4a18-41dc-8901-bb539144c90c}</UniqueIdentifier>
+    <Filter Include="Lesson\14.STL-vector">
+      <UniqueIdentifier>{517d65c5-4609-4481-8e9b-be469923aad3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lesson\15.STL-list">
+      <UniqueIdentifier>{dbb3302a-f3ae-49dd-8f6e-5cd00850628c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="homework\16.0808">
+      <UniqueIdentifier>{f45961f3-ac22-4ddf-91ac-a3f7e432f96a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -297,16 +297,35 @@
     <ClCompile Include="테스트문제.cpp">
       <Filter>homework\연습</Filter>
     </ClCompile>
-    <ClCompile Include="1.vector.cpp" />
-    <ClCompile Include="3.vector.cpp" />
-    <ClCompile Include="Amor.cpp" />
-    <ClCompile Include="Item.cpp" />
-    <ClCompile Include="Shop.cpp" />
-    <ClCompile Include="STL필기.cpp" />
-    <ClCompile Include="2.vector.cpp" />
-    <ClCompile Include="Weapon.cpp" />
-    <ClCompile Include="01.특강_0808_.cpp">
-      <Filter>homework\특강</Filter>
+    <ClCompile Include="1.vector.cpp">
+      <Filter>Lesson\14.STL-vector</Filter>
+    </ClCompile>
+    <ClCompile Include="2.vector.cpp">
+      <Filter>Lesson\14.STL-vector</Filter>
+    </ClCompile>
+    <ClCompile Include="3.vector.cpp">
+      <Filter>Lesson\14.STL-vector</Filter>
+    </ClCompile>
+    <ClCompile Include="STL필기.cpp">
+      <Filter>Lesson\14.STL-vector</Filter>
+    </ClCompile>
+    <ClCompile Include="15-1.cpp">
+      <Filter>Lesson\15.STL-list</Filter>
+    </ClCompile>
+    <ClCompile Include="15-2.cpp">
+      <Filter>Lesson\15.STL-list</Filter>
+    </ClCompile>
+    <ClCompile Include="Amor.cpp">
+      <Filter>homework\16.0808</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>homework\16.0808</Filter>
+    </ClCompile>
+    <ClCompile Include="Shop.cpp">
+      <Filter>homework\16.0808</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapon.cpp">
+      <Filter>homework\16.0808</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -343,9 +362,17 @@
     <ClInclude Include="GameScene.h">
       <Filter>homework\12. 0806_03\헤더</Filter>
     </ClInclude>
-    <ClInclude Include="Amor.h" />
-    <ClInclude Include="Item.h" />
-    <ClInclude Include="Shop.h" />
-    <ClInclude Include="Weapon.h" />
+    <ClInclude Include="Weapon.h">
+      <Filter>homework\16.0808</Filter>
+    </ClInclude>
+    <ClInclude Include="Amor.h">
+      <Filter>homework\16.0808</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>homework\16.0808</Filter>
+    </ClInclude>
+    <ClInclude Include="Shop.h">
+      <Filter>homework\16.0808</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

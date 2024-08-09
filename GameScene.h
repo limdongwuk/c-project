@@ -2,6 +2,7 @@
 #include <iostream>
 #include "LostArkClass.h"
 
+
 class GameScene 
 {
 private:
@@ -13,11 +14,15 @@ private:
     void AttackDirection();
     void ReactionChoice();
     void React();
+    int num;
 public:
     GameScene();
     ~GameScene();
     void GameStart();
+    int GetCharacterClass();
+    void MenuChoice();
     
-    
+
+
 };
 

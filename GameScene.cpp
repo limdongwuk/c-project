@@ -1,22 +1,23 @@
+#pragma once
 #include "GameScene.h"
 #include "BattleMaster.h"
 #include "Blade.h"
 #include "GunSlinger.h"
+
+#include "Item.h"
 
 #define UP 72
 #define DOWN 80
 #define RIGHT 77
 #define LEFT 75
 
-GameScene::GameScene()
-    : Direction(0), reaction(0),CL(nullptr),input(0)
+GameScene::GameScene() : num(0), Direction(0), reaction(0), CL(nullptr), input(0)
 {
     std::cout << "마수군단장 발탄의 공격에 대응하세요" << std::endl;
 }
 
 GameScene::~GameScene()
 {
-
     delete CL;
 }
 
@@ -26,14 +27,12 @@ void GameScene::GameStart()
     AttackDirection();
     ReactionChoice();
     React();
+
 }
-
-
 
 void GameScene::CharacterSelect()
 {
     CL->choice();
-    int num;
     std::cin >> num;
     switch (num)
     {
@@ -46,6 +45,9 @@ void GameScene::CharacterSelect()
     case 3:
         CL = new GunSlinger("건슬링어", 10000, 8000, 7000, 80);
         break;
+    default:
+        // 너 잘못 입력함.
+        break;
     }
 
     CL->status();
@@ -55,7 +57,14 @@ void GameScene::CharacterSelect()
     CL->Damage(200);
     std::cout << std::endl;
     CL->classattack();
+    
 }
+int GameScene::GetCharacterClass()
+{
+    return num;
+}
+
+
 
 void GameScene::AttackDirection()
 {   
@@ -137,6 +146,34 @@ void GameScene::React()
     
 }
 
+void GameScene::MenuChoice()
+{
+    Item ItemM("이름");
+    ItemM.ItemList();
+
+    std::cout << "메뉴를 선택하세요" << std::endl;
+    std::cout << "1.상점 열기" << std::endl;
+    std::cout << "2.인벤토리 열기" << std::endl;
+    std::cout << "3.스탯 확인하기" << std::endl;
+    int choice;
+    std::cin>> choice;
+    switch (choice)
+    {
+    case 1:
+        Item * ItemM = new Item("이름");
+        ItemM->ItemList();
+
+    case 2:
+        인벤토리 프린트 함수
+
+            case3 :
+        스텟 보여주기 함수
+    
+   
+    
+    }
+
+}
 
 
 
