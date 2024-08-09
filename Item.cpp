@@ -20,7 +20,24 @@ Item::Item(const std::string& _name) : name(_name)
 {
 }
 
-std::string Item::getName()
+Item::~Item()
+{
+    if (nullptr != WeaponManager)
+    {
+        delete WeaponManager;
+        WeaponManager = nullptr;
+    }
+}
+
+void Item::ItemList()
+{
+    Weapon* weapon = new Weapon();
+    Amor* amor = new Amor("³°Àº Åõ±¸", 700, 70, 150, 150, 0);
+    weapon->WeaponPrint(G.GetCharacterClass());
+    amor->AmorPrint();
+}
+
+const std::string& Item::getName()
 {
     return name;
 }

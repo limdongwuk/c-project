@@ -55,7 +55,7 @@ int LostArkClass::getDefence()
     return Defence;
 }
 
-int LostArkClass::getHp()
+int LostArkClass::getHp() 
 {
     return Hp;
 }

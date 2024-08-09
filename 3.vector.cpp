@@ -20,7 +20,7 @@ private:
 
 void main()
 {//벡터를 사용한 푸시백
-    std::vector<Weapon1>weapon; //wapon 객체를 저장할 벡터 생성
+    std::vector<Weapon1>weapon; //wapon 객체를 저장할 벡터 생성 //weapon이라는 이름을 갖는 Weapon1자료형의 벡터
     //벡터에 정적할당 하는 방법
     weapon.push_back(Weapon1("장검", 50));
     weapon.push_back(Weapon1("활", 10));
