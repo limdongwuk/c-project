@@ -14,11 +14,15 @@ VirtualFunction(가상함수)
 */
 #include"Bike.h"
 #include"Car.h"
-void main()
+void show(const Vehicle& obj)
 {
-    Vehicle* v;
-
-
+    obj.Move();
+}
+void main() 
+{
+    Vehicle* v;//(v라는 객체 생성된것아님 new할때 생성됨)
+    Vehicle c;//c라는 객체 생성된것 
+    
     //부모의 포인터(v)로 자식클래스 참조 --> 동적바인딩이라고 함
     //생성자 소멸자 발동 순서 : 부모생성자-> 자식생성자 ->자식소멸자 ->부모 소멸자
 

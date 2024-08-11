@@ -2,13 +2,12 @@
 
 #include <iostream>
 #include <vector>
-#include "Weapon.h"
 #include "GameScene.h"
-#include "Amor.h"
+
 class Item
 {
 private:
-    class Weapon* WeaponManager;
+    
 protected:
 
     
@@ -20,9 +19,10 @@ public :
     ~Item();
     /*void ItemSpec(std::string& _name, int _Strength, int Agility,int _intelligence, int _Hp, int _Attack, int _Defence);*/
     void ItemList();
-    
     const std::string& getName();
     void setName(std::string& name);
+    virtual void ItemPrint(int ClassChoice);
+
    
 };
 

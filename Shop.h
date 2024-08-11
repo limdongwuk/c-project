@@ -16,12 +16,13 @@
 #include "blade.h"
 #include "Battlemaster.h"
 #include "Weapon.h"
+#include "Item.h"
 class Shop
 {private : 
     std::vector<Weapon>weapons;
 public:
-    void Sell();
-    void Buy();
+    void SpecandSellandBuy();
+    
     void PrintList();
     void QuantityLeft();
     

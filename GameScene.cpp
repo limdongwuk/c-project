@@ -16,6 +16,8 @@ GameScene::GameScene() : num(0), Direction(0), reaction(0), CL(nullptr), input(0
     std::cout << "마수군단장 발탄의 공격에 대응하세요" << std::endl;
 }
 
+
+
 GameScene::~GameScene()
 {
     delete CL;
@@ -27,6 +29,8 @@ void GameScene::GameStart()
     AttackDirection();
     ReactionChoice();
     React();
+    Item I("");
+    I.ItemList();
 
 }
 
@@ -146,34 +150,34 @@ void GameScene::React()
     
 }
 
-void GameScene::MenuChoice()
-{
-    Item ItemM("이름");
-    ItemM.ItemList();
+//void GameScene::MenuChoice()
+//{
+//    Item ItemM("이름");
+//    ItemM.ItemList();
+//
+//    std::cout << "메뉴를 선택하세요" << std::endl;
+//    std::cout << "1.상점 열기" << std::endl;
+//    std::cout << "2.인벤토리 열기" << std::endl;
+//    std::cout << "3.스탯 확인하기" << std::endl;
+//    int choice;
+//    std::cin>> choice;
+//    switch (choice)
+//    {
+//    case 1:
+//        Item * ItemM = new Item("이름");
+//        ItemM->ItemList();
+//
+//    case 2:
+//        인벤토리 프린트 함수
+//
+//            case3 :
+//        스텟 보여주기 함수
+//    
+//   
+//    
+//    }
 
-    std::cout << "메뉴를 선택하세요" << std::endl;
-    std::cout << "1.상점 열기" << std::endl;
-    std::cout << "2.인벤토리 열기" << std::endl;
-    std::cout << "3.스탯 확인하기" << std::endl;
-    int choice;
-    std::cin>> choice;
-    switch (choice)
-    {
-    case 1:
-        Item * ItemM = new Item("이름");
-        ItemM->ItemList();
-
-    case 2:
-        인벤토리 프린트 함수
-
-            case3 :
-        스텟 보여주기 함수
-    
-   
-    
-    }
-
-}
+//}
 
 
 

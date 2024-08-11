@@ -2,19 +2,21 @@
 #include <iostream>
 #include <vector>
 #include "Item.h"
-
-class Amor : public Item
+#include "LostArkClass.h"
+class Weapon : public Item
 {
-private :
-    int Hp;
-    int Defence;
+private:
+    std::vector<Weapon>weapon;
     int Strength;
     int Agility;
     int Intelligence;
-    std::vector<Amor>amor;
-public:
-    Amor(const std::string& _name, int _Hp, int _Defence, int _Strength, int _Agility, int _Intelligence);
+    int Damage;
     
-    void AmorPrint();
-    void AmorListSpec();
+public:
+    Weapon(const std::string& _name, int _Strength, int _Agility, int _Intelligence, int _Damage);
+    Weapon(const std::string& _name);
+    Weapon();
+    virtual void ItemPrint(int ClassChoice);
+    void WeaponListSpec();
 };
+

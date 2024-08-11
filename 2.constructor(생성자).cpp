@@ -28,7 +28,7 @@ public :
         num = 1;
         score = 2;
     }*/
-    Exam(int numVal, int scoreVal) : num(numVal), score(scoreVal) 
+    Exam(int numVal, int scoreVal) : num(numVal), score(scoreVal)
     {
 
     }
@@ -78,9 +78,11 @@ public:
 
 void main()
 {
-    Player* player = new Player();  ///괄호가 생성자
+    Player* player = new Player();  /// Player 괄호가 생성자/////  Player형 포인터를 player변수에 주소를 저장할건데 =Player라는 객체를 생성해서 넣겟다 기본생성자
     player->PrintInfo();
 
+ /*   Player player() *///정적할당을 통한 인스턴스 생성 player()가 생성자
+    //(*num). == num-> .이랑 화살표랑 차이점(지금은 같은상태)
 
     Player* player1 = new Player("카리나", 10, 50);
     player1->PrintInfo();

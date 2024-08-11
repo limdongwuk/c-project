@@ -6,7 +6,7 @@ Amor::Amor(const std::string& _name, int _Hp, int _Defence, int _Strength, int _
 }
 
 
-void Amor::AmorPrint()
+void Amor::ItemPrint(int ClassChoice)
 {
     if (!amor.empty())
     {for(int itemnumber=3; itemnumber<14; itemnumber++)

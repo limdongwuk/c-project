@@ -22,19 +22,21 @@ Item::Item(const std::string& _name) : name(_name)
 
 Item::~Item()
 {
-    if (nullptr != WeaponManager)
+   /* if (nullptr != WeaponManager)
     {
         delete WeaponManager;
         WeaponManager = nullptr;
-    }
+    }*/
 }
 
 void Item::ItemList()
 {
-    Weapon* weapon = new Weapon();
-    Amor* amor = new Amor("³°Àº Åõ±¸", 700, 70, 150, 150, 0);
-    weapon->WeaponPrint(G.GetCharacterClass());
-    amor->AmorPrint();
+    Item* weapon = new Weapon("", 0, 0,0 , 0)
+    
+    I = new Weapon();
+        WeaponPrint(G.GetCharacterClass());
+        I = new Amor;
+        AmorPrint();  
 }
 
 const std::string& Item::getName()
@@ -45,6 +47,10 @@ const std::string& Item::getName()
 void Item::setName(std::string& name)
 {
     this->name = name;
+}
+
+void Item::ItemPrint(int ClassChoice)
+{
 }
 
 

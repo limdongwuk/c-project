@@ -15,10 +15,9 @@ private:
 public:
     Weapon(const std::string& _name, int _Strength, int _Agility, int _Intelligence, int _Damage);
     Weapon(const std::string& _name);
-    Weapon() : Item(name) {};
-    void WeaponPrint(int ClassChoice);
+    Weapon();
+    virtual void ItemPrint(int ClassChoice);
     void WeaponListSpec();
-
 };
 
 

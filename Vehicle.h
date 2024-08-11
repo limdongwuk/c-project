@@ -7,7 +7,7 @@ protected:
     std::string name;
 public:
     Vehicle(const std::string& n);
-
+    Vehicle() {};
 
    virtual~Vehicle(); //객체가 올바르게 해제가 될수있도록 소멸자 앞에 virtual
    //다형성을 활용할때 객체가 올바르게 소멸되도록  virtual을 쓰지않으면 기본클래스의 소멸자만 호출되고 자식클래스의 소멸자는 호출되지 않는다.

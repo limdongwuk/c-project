@@ -49,8 +49,47 @@ class Child : public Parent {
 //    c.Print(10);
 //    c.Print(20.5);
 //
-//    Parent* pPtr = new Child();
+//    Parent* pPtr = new Child(); //parent를 상속받ㄷ는 child이기 때문에 이렇게 사용 가능
 //    pPtr->Show();//자식클래스의 쇼라는 함수를 호출 동적 바인딩
 //    
 //    delete pPtr;
 //}
+
+#include <iostream>
+
+class Base {
+public:
+    virtual void display() const { std::cout << "Base class" << std::endl; } // 가상 함수
+    virtual ~Base() {} // 가상 소멸자
+};
+
+class Derived : public Base {
+public:
+    void display() const override { std::cout << "Derived class" << std::endl; }
+};
+
+void show(const Base& obj) { //함수에서 매개변수에 베이스클래스를 참조하는 obj라는 변수를 생성 이변수로는 부모와 자식의 매서드호출이 모두 가능하다. 
+    //const Base& obj는 Base 클래스 타입의 참조로, 실제로는 Base 또는 Base를 상속받은 자식 클래스의 객체를 참조합니다.
+    //obj는 실제 객체의 타입에 따라 적절한 display를 호출한다.
+    obj.display(); // 다형성: obj의 실제 타입에 따라 호출되는 함수가 달라짐
+}
+
+//void show(const Base* obj) {
+//    obj->display(); // 포인터를 통해 display() 메서드 호출
+//}        //이렇게도 사용가능
+int main() {
+    Derived d;   // Derived 클래스의 객체 생성
+    show(d);     // Derived클래스의 d라는 객체를 Base 참조(변환하여) 전달((show(d)를 호출할 때 Base& obj = d가 생략된 것)))
+    //show 함수 내에서 obj.display()를 호출할 때, obj는 Base 클래스 타입의 참조이지만 
+    // 실제로는 Derived 객체를 참조합니다. 이 경우, 오버라이드 덕분에 Derived 클래스의 display 메서드가 호출됩니다.
+    return 0;
+}
+//"실제로는 Derived 객체를 참조한다"는 것은 참조가 가리키는 객체의 실제 타입이 Derived 클래스임을 의미하며, 
+// 이로 인해 오버라이딩된 메서드가 호출된다는 것을 설명합니다.
+
+int main() {
+    Base* b = new Derived(); // Base 포인터가 Derived 객체를 가리킴
+    show(*b); // "Derived class" 출력
+    delete b; // 메모리 해제
+    return 0;
+}

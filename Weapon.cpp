@@ -1,44 +1,33 @@
+#include "Amor.h"
 
-#include "Weapon.h"
-
-Weapon::Weapon(const std::string& _name, int _Strength, int _Agility, int _Intelligence, int _Damage)
-    :Item(_name), Strength(_Strength), Agility(_Agility), Intelligence(_Intelligence), Damage(_Damage)
+Amor::Amor(const std::string& _name, int _Hp, int _Defence, int _Strength, int _Agility, int _Intelligence)
+    :Item(_name), Hp(_Hp), Defence(_Defence), Strength(_Strength), Agility(_Agility), Intelligence(_Intelligence)
 {
 }
 
-Weapon::Weapon(const std::string& _name): Item(_name)
-{
 
-}
-
-void Weapon::WeaponPrint(int ClassChoice)
+void Amor::ItemPrint(int ClassChoice)
 {
-    
-    switch (ClassChoice)
+    if (!amor.empty())
     {
-    case 1:
-        printf("≥∞¿∫ ∞«∆≤∏¥\n");
-        printf("√÷∞Ì±ﬁ ∞«∆≤∏¥\n");
-        break;
-    case 2:
-        printf("≥∞¿∫ ∞«∆≤∏¥\n");
-        printf("√÷∞Ì±ﬁ ∞«∆≤∏¥\n");
-        break;
-    case 3:
-        printf("≥∞¿∫ ∞«∆≤∏¥\n");
-        printf("√÷∞Ì±ﬁ ∞«∆≤∏¥\n");
-        break;
+        for (int itemnumber = 3; itemnumber < 14; itemnumber++)
+            std::cout << itemnumber << "." << amor[0].getName() << std::endl;
     }
 }
 
-void Weapon::WeaponListSpec()
-{
-    weapon.push_back(Weapon("≥∞¿∫ ∞«∆≤∏¥", 100, 300, 0, 1800));
-    weapon.push_back(Weapon("√÷∞Ì±ﬁ ∞«∆≤∏¥", 500, 3000, 0, 5400));
-    weapon.push_back(Weapon("≥∞¿∫ º¶∞«", 100, 300, 0, 1800));
-    weapon.push_back(Weapon("√÷∞Ì±ﬁ º¶∞«", 500, 3000, 0, 5400));
-    weapon.push_back(Weapon("≥∞¿∫ ¥‹∞À", 400, 100, 0, 1800));
-    weapon.push_back(Weapon("√÷∞Ì±ﬁ ¥‹∞À", 4000, 500, 0, 5400));
-}
 
+void Amor::AmorListSpec()
+{
+
+    amor.push_back(Amor("≥∞¿∫ ≈ı±∏", 700, 70, 150, 150, 0));
+    amor.push_back(Amor("√÷∞Ì±ﬁ ≈ı±∏", 1400, 140, 300, 300, 0));
+    amor.push_back(Amor("≥∞¿∫ ∞ﬂ∞©", 500, 40, 300, 300, 0));
+    amor.push_back(Amor("√÷∞Ì±ﬁ ∞ﬂ∞©", 1000, 80, 600, 600, 0));
+    amor.push_back(Amor("≥∞¿∫ ªÛ¿«", 1000, 80, 70, 70, 0));
+    amor.push_back(Amor("√÷∞Ì±ﬁ ªÛ¿«", 2000, 160, 140, 140, 0));
+    amor.push_back(Amor("≥∞¿∫ «œ¿«", 800, 60, 30, 30, 0));
+    amor.push_back(Amor("√÷∞Ì±ﬁ «œ¿«", 1600, 120, 60, 60, 0));
+    amor.push_back(Amor("≥∞¿∫ ¿Â∞©", 400, 20, 400, 400, 0));
+    amor.push_back(Amor("√÷∞Ì±ﬁ ¿Â∞©", 800, 40, 800, 800, 0));
+}
 
