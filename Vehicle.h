@@ -6,7 +6,7 @@ class Vehicle
 protected:
     std::string name;
 public:
-    Vehicle(const std::string& n);
+    Vehicle(std::string& n);
     Vehicle() {};
 
    virtual~Vehicle(); //객체가 올바르게 해제가 될수있도록 소멸자 앞에 virtual
