@@ -1,7 +1,6 @@
 #include "System.h"
-#include "dote.h"
-#include <conio.h>
-#include "TycoonPlayer.h"
+
+
 
 void System::MoveCursor(int x, int y) //커서 위치 바꾸기
 {
@@ -11,39 +10,43 @@ void System::MoveCursor(int x, int y) //커서 위치 바꾸기
 }
 void System::kneading()
 {
+    
+    
     short inputflag;
     short flag = 0;
-    TycoonPlayer player(0, 0, 10);
+    
     while (1)
     {
-        player.HpPrint();
+        
+        
         if (_kbhit())
         {
+           
+            
             int number = _getch();
             Mold mold = static_cast<Mold>(number);
 
-            short inputflag = 1 << (number - 49);
+            inputflag = 1 << (number - 49);
             if (inputflag & flag)
             {
+
                 Mold_Delete(mold);
                 flag &= ~inputflag;
-                if (isMoldDraw1[static_cast<int>(mold) - 49] || isMoldDraw3[static_cast<int>(mold) - 49])
-                { 
-
-                }
+  
             }
             else
             {
                 Mold_Draw1(mold);
                 flag |= inputflag;
-                if (isMoldDraw2)
-                {
-                   player.Breadstock();
-                }
+             
+               
                 Gettick(mold);
+                
+                
             }
         }
         Check();
+        
     }
 }
 struct Position
@@ -64,13 +67,34 @@ void System::Mold_Delete(Mold mold)
     Position dirValue = Drawset[static_cast<int>(mold) - 49];
     d.deleteDraw(dirValue.x, dirValue.y, 0, 0);
 
+    if (isMoldDraw2[static_cast<int>(mold) - 49]) {
+        player.Breadstock();
+        player.Breadstock0or30();
+        MoveCursor(0, 47);
+        player.BreadstockPrint();
+        isMoldDraw2[static_cast<int>(mold) - 49] = false;
+    }
+    else if (isMoldDraw1[static_cast<int>(mold) - 49] || isMoldDraw3[static_cast<int>(mold) - 49]) {
+        player.DecreaseHp();
+        MoveCursor(0, 48);
+        player.HpPrint();
+    }
     moldDeleted[mold] = true;
     isDrawing[mold] = false;
+    
+   /* if (isMoldDraw2[static_cast<int>(mold) - 49])
+    {
+        TycoonPlayer player;
+        player.Breadstock();
+    }*/
+    
 }
 
 void System::Mold_Draw1(Mold mold)
 {
     dote d;
+    
+  
     switch (mold)
     {
     case Mold::one:
@@ -101,7 +125,9 @@ void System::Mold_Draw1(Mold mold)
         d.DrawFishbread_1(34, 8);
         break;
     }
-    isMoldDraw1[static_cast<int>(mold) - 49] = true;
+        isMoldDraw1[static_cast<int>(mold) - 49] = true;
+        
+    
 }
 void System::Mold_Draw2(Mold mold)
 {
@@ -138,6 +164,9 @@ void System::Mold_Draw2(Mold mold)
     }
     Draw1check[static_cast<int>(mold) - 49] = false;
     isMoldDraw2[static_cast<int>(mold) - 49] = true;
+    
+    
+    
 }
 void System::Mold_Draw3(Mold mold)
 {
@@ -181,13 +210,12 @@ void System::Gettick(Mold mold)
     timers[mold] = GetTickCount64();
     isDrawing[mold] = true;
     moldDeleted[mold] = false;
+
 }
 
 void System::Check()
 {
     DWORD currentTime = GetTickCount64();
-    TycoonPlayer player(0,0,10);
-    player.Hp();
     for (auto& pair : timers)
     {
         Mold mold = pair.first;
@@ -196,6 +224,7 @@ void System::Check()
         
         if (moldDeleted[mold])
         {
+           
             continue;
         }
 
@@ -206,6 +235,8 @@ void System::Check()
             {
                 Mold_Draw2(mold);
                 isDrawing[mold] = false; // 2초 후에는 Draw2로 변경
+                isMoldDraw1[static_cast<int>(mold) - 49] = false;//gpt
+                isMoldDraw2[static_cast<int>(mold) - 49] = true;//pgt
                 timers[mold] = currentTime;
             }
         }
@@ -214,12 +245,40 @@ void System::Check()
             if (elapsed > interval)
             {
                 Mold_Draw3(mold);
-                isDrawing[mold] = false;
+                isMoldDraw2[static_cast<int>(mold) - 49] = false;
+                isMoldDraw3[static_cast<int>(mold) - 49] = true;
                 timers[mold] = currentTime;
-
             }
         }
     }
 
 }
+
+void System::conversion()
+{
+    Customer c;
+    
+    while (1)
+    {
+        if (_kbhit())
+        {
+            char input = _getch();
+            if (input == 'w')
+            {
+                int num_input = _getch();
+                if (c.wantBreadNum() == num_input)
+                {
+                    MoveCursor(0, 47);
+                    player.setBreadstock();
+                }
+                else if (input == 'q')
+                {
+                    c.run = false;
+                }
+            }
+        }
+    }
+}
+
+
 
