@@ -10,27 +10,27 @@ void dote::TextColor(int font, int backGround)
 }
 
 void dote::DrawFishbread_1(int X, int Y)
-{  
+{
     const int index = 8;
     std::string fishbread[index]
-    =
-    { 
+        =
+    {
         "   0000 ",
         "  000000  ",
         "  030030 ",
         "  000000  ",
-        "   0000 ", 
+        "   0000 ",
         "    00 ",
         "  000000 ",
         " 0 0 0 0 0  "
-    };   
+    };
     int Xnum = X;
     System S;
     for (int i = 0; i < index; ++i)
     {
         X = Xnum;
         for (char& F : fishbread[i])
-        { 
+        {
             S.MoveCursor(X++, Y);
             if (F == '0')
             {
@@ -41,7 +41,7 @@ void dote::DrawFishbread_1(int X, int Y)
             {
                 TextColor(0, 15);
                 std::cout << "●";
-            }   
+            }
             else
             {
                 TextColor(7, 0);
@@ -203,8 +203,8 @@ void dote::Title()
     std::cout << std::string((155 - width) / 2, ' '); cout << "|    | |    | |    | |    | |    |  \n";
     std::cout << std::string((155 - width) / 2, ' '); cout << "| 문 | | 어 | | 빵 | | 가 | | 게 | \n";
     std::cout << std::string((155 - width) / 2, ' '); cout << "|____| |____| |____| |____| |____|  \n";
-    
-    std::cout << std::endl << std::endl << std::endl << std::endl<< std::endl << std::endl;
+
+    std::cout << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
     std::cout << std::string((160 - width) / 2, ' '); std::cout << "1~9 번호 키: 각 번호 몰드 상호작용" << std::endl << std::endl;
     std::cout << std::string((160 - width) / 2, ' '); std::cout << "Q =문어빵 1개 건네주기" << std::endl << std::endl;
     std::cout << std::string((160 - width) / 2, ' '); std::cout << "W =문어빵 2개 건네주기" << std::endl << std::endl;
@@ -253,11 +253,10 @@ void dote::Board()
     std::cout << "  ■" << setw(30) << "■" << setw(30) << "■" << setw(30) << "■" << std::endl;
     std::cout << "  ■" << setw(30) << "■" << setw(30) << "■" << setw(30) << "■" << std::endl;
     std::cout << "  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■" << std::endl;
-      
+
 
 
 
 }
-    
-    
-    
+
+

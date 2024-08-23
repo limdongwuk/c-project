@@ -11,7 +11,7 @@
 
 enum class Mold
 {
-   
+
     one = 49,
     two = 50,
     three = 51,
@@ -25,9 +25,9 @@ enum class Mold
 class System
 {
 private:
-    
+
     Mold mold;
-    
+
     int interval3 = 2500; //∏‡∆Æ ¿Œ≈Õπ˙
     int interval4 = 8000; // √≥¿Ω ∏‡∆Æ ¿Œ≈Õπ˙
     std::unordered_map<Mold, unsigned int> interval;
@@ -35,7 +35,7 @@ private:
     std::unordered_map<Mold, bool> isDrawing;
     std::map<Mold, bool> moldDeleted;
     bool Draw1check[9] = { false };
-    bool isMoldDraw1[9] = { false }; 
+    bool isMoldDraw1[9] = { false };
     bool isMoldDraw3[9] = { false };
     bool isMoldDraw2[9] = { false };
     int score = 0;
@@ -43,7 +43,7 @@ private:
     Customer C;
 
 public:
-    
+
     bool run = true;
     void MoveCursor(int x, int y);
     void kneading();
@@ -57,6 +57,6 @@ public:
     int Interval(Mold mold);
     int getScore();
     void ending();
-    
+
 };
 

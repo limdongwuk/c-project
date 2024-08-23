@@ -6,15 +6,15 @@ void Customer::generateBreadNum()
 }
 
 int Customer::wantBreadNum() const
-{ 
+{
     return _Request;
 }
 
 void Customer::ment()
 {
 
-        generateBreadNum();
-        _ment = rand() % 2;
+    generateBreadNum();
+    _ment = rand() % 2;
     MoveCursor(18, 2);
     switch (_ment)
     {

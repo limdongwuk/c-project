@@ -15,30 +15,24 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="TycoonPlayer.h">
+    <ClInclude Include="System.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Customer.h">
+    <ClInclude Include="TycoonPlayer.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="dote.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="System.h">
+    <ClInclude Include="Customer.h">
       <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\Downloads\Tickable.h">
-      <Filter>리소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\Downloads\TickTimer.h">
-      <Filter>리소스 파일</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="TycoonPlayer.cpp">
+    <ClCompile Include="System.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Customer.cpp">
+    <ClCompile Include="TycoonPlayer.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="GameMain.cpp">
@@ -47,14 +41,8 @@
     <ClCompile Include="dote.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="System.cpp">
+    <ClCompile Include="Customer.cpp">
       <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Downloads\TickTimer.cpp">
-      <Filter>리소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Downloads\Utility.cpp">
-      <Filter>리소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

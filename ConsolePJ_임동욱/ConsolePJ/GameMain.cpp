@@ -23,7 +23,7 @@ void main()
     system("cls");
     S.MoveCursor(0, 5);
     d.Board();
-    Customer c;    
+    Customer c;
     S.MoveCursor(15, 0);
     S.kneading();
 }
