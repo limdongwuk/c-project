@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\01_Class">
+      <UniqueIdentifier>{0e76b76c-0d72-4adc-8b4e-80b5480defb0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01_Class\01_Basic">
+      <UniqueIdentifier>{4d81e2b3-0ea6-4e3a-98b9-fbc3b5242fe2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01_Class\02_Enum">
+      <UniqueIdentifier>{79e1bf63-baa8-4277-a4ab-824d5fde2341}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02_Class_Communicate">
+      <UniqueIdentifier>{4f16930d-99c6-4d15-ae83-c6c922f80fd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03_Class_Has_A">
+      <UniqueIdentifier>{79686041-e704-486a-aabb-d3bbe91e0018}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\04_Class_Is_A">
+      <UniqueIdentifier>{5a62666d-51fb-45c6-a3b7-4fec308a61c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\05_Class_Communicate_Advacned">
+      <UniqueIdentifier>{b318dd8c-0da4-4dd9-a515-3be14d6ab62a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02_Class_Communicate\05_Class_Array">
+      <UniqueIdentifier>{54149cd0-7f3c-4561-b2fc-c7e0bb44ff83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02_Class_Communicate\03_Class_Dynamic_Alloc">
+      <UniqueIdentifier>{9bcd1ec0-fd5f-4d5e-831e-e356e757739b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02_Class_Communicate\04_Class_Communicate">
+      <UniqueIdentifier>{f31e5bc3-ccd4-4603-b0e3-c852ba39f57e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="02_Fan.cpp">
+      <Filter>소스 파일\01_Class\02_Enum</Filter>
+    </ClCompile>
+    <ClCompile Include="02_Quiz.cpp">
+      <Filter>소스 파일\01_Class\02_Enum</Filter>
+    </ClCompile>
+    <ClCompile Include="02_Main.cpp">
+      <Filter>소스 파일\01_Class\02_Enum</Filter>
+    </ClCompile>
+    <ClCompile Include="01_Main.cpp">
+      <Filter>소스 파일\01_Class\01_Basic</Filter>
+    </ClCompile>
+    <ClCompile Include="01_Quiz.cpp">
+      <Filter>소스 파일\01_Class\01_Basic</Filter>
+    </ClCompile>
+    <ClCompile Include="01_AirConditioner.cpp">
+      <Filter>소스 파일\01_Class\01_Basic</Filter>
+    </ClCompile>
+    <ClCompile Include="04_Person.cpp">
+      <Filter>소스 파일\02_Class_Communicate\04_Class_Communicate</Filter>
+    </ClCompile>
+    <ClCompile Include="04_Main.cpp">
+      <Filter>소스 파일\02_Class_Communicate\04_Class_Communicate</Filter>
+    </ClCompile>
+    <ClCompile Include="04_AirConditioner.cpp">
+      <Filter>소스 파일\02_Class_Communicate\04_Class_Communicate</Filter>
+    </ClCompile>
+    <ClCompile Include="04_Quiz.cpp">
+      <Filter>소스 파일\02_Class_Communicate\04_Class_Communicate</Filter>
+    </ClCompile>
+    <ClCompile Include="03_Main.cpp">
+      <Filter>소스 파일\02_Class_Communicate\03_Class_Dynamic_Alloc</Filter>
+    </ClCompile>
+    <ClCompile Include="03_Person.cpp">
+      <Filter>소스 파일\02_Class_Communicate\03_Class_Dynamic_Alloc</Filter>
+    </ClCompile>
+    <ClCompile Include="03_Food.cpp">
+      <Filter>소스 파일\02_Class_Communicate\03_Class_Dynamic_Alloc</Filter>
+    </ClCompile>
+    <ClCompile Include="03_Quiz.cpp">
+      <Filter>소스 파일\02_Class_Communicate\03_Class_Dynamic_Alloc</Filter>
+    </ClCompile>
+    <ClCompile Include="03_Bowl.cpp">
+      <Filter>소스 파일\02_Class_Communicate\03_Class_Dynamic_Alloc</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson5_Main.cpp">
+      <Filter>소스 파일\02_Class_Communicate\05_Class_Array</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson5_BigObject.cpp">
+      <Filter>소스 파일\02_Class_Communicate\05_Class_Array</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson5_SmallObject.cpp">
+      <Filter>소스 파일\02_Class_Communicate\05_Class_Array</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson5_Quiz.cpp">
+      <Filter>소스 파일\02_Class_Communicate\05_Class_Array</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson5_MediumObject.cpp">
+      <Filter>소스 파일\02_Class_Communicate\05_Class_Array</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="02_Fan.h">
+      <Filter>소스 파일\01_Class\02_Enum</Filter>
+    </ClInclude>
+    <ClInclude Include="02_Enums.h">
+      <Filter>소스 파일\01_Class\02_Enum</Filter>
+    </ClInclude>
+    <ClInclude Include="01_AirConditioner.h">
+      <Filter>소스 파일\01_Class\01_Basic</Filter>
+    </ClInclude>
+    <ClInclude Include="04_Person.h">
+      <Filter>소스 파일\02_Class_Communicate\04_Class_Communicate</Filter>
+    </ClInclude>
+    <ClInclude Include="04_AirConditioner.h">
+      <Filter>소스 파일\02_Class_Communicate\04_Class_Communicate</Filter>
+    </ClInclude>
+    <ClInclude Include="03_Person.h">
+      <Filter>소스 파일\02_Class_Communicate\03_Class_Dynamic_Alloc</Filter>
+    </ClInclude>
+    <ClInclude Include="03_Food.h">
+      <Filter>소스 파일\02_Class_Communicate\03_Class_Dynamic_Alloc</Filter>
+    </ClInclude>
+    <ClInclude Include="03_Bowl.h">
+      <Filter>소스 파일\02_Class_Communicate\03_Class_Dynamic_Alloc</Filter>
+    </ClInclude>
+    <ClInclude Include="Lesson5_BigObject.h">
+      <Filter>소스 파일\02_Class_Communicate\05_Class_Array</Filter>
+    </ClInclude>
+    <ClInclude Include="Lesson5_SmallObject.h">
+      <Filter>소스 파일\02_Class_Communicate\05_Class_Array</Filter>
+    </ClInclude>
+    <ClInclude Include="Lesson5_MediumObject.h">
+      <Filter>소스 파일\02_Class_Communicate\05_Class_Array</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
