@@ -5,9 +5,7 @@
 
 HINSTANCE _hInstance;
 HWND _hWnd;
-
-
-LPTSTR _lpszClass = TEXT("Windows API");
+LPTSTR _lpszClass = TEXT("Windows API");// 윈도우 타이틀
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 
 int APIENTRY WinMain(HINSTANCE hInstance, 
@@ -15,6 +13,7 @@ int APIENTRY WinMain(HINSTANCE hInstance,
     LPSTR    lpszCmdParam,
     int       nCmdShow)
 {
+    
     _hInstance = hInstance;
     WNDCLASS wndClass; 
     wndClass.cbClsExtra = 0; 
