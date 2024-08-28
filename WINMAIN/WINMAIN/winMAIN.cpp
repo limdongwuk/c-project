@@ -43,7 +43,7 @@
   ¤¤ Å¬·¡½º°¡ ¸Ş¸ğ¸®¿¡ ½ÇÁ¦·Î ±¸ÇöµÈ ½ÇÃ¼
   ¤¤ ½ÇÇàµÇ°í ÀÖ´Â °¢°¢ÀÇ ÇÁ·Î±×·¥µé
 */
-HINSTANCE _hInstance;  
+HINSTANCE _hInstance;
 
 // ÇÚµé : À©µµ¿ì Ã¢
 HWND _hWnd;
@@ -119,7 +119,7 @@ int APIENTRY WinMain(HINSTANCE hInstance, //ÁøÀÔÁ¡ , wWinMain¿¡¼­ w»°À½ / ¿ùµå¿Í
 
 
     // 1-3. È­¸é¿¡ º¸¿©ÁÙ À©µµ¿ì Ã¢ »ı¼º
-    _hWnd = CreateWindowW
+    _hWnd = CreateWindow
     (
         _lpszClass,                //À©µµ¿ì Å¬·¡½º ½Äº°ÀÚ
         _lpszClass,                //À©µµ¿ì Å¸ÀÌÆ² ¹Ù ÀÌ¸§
@@ -152,6 +152,17 @@ int APIENTRY WinMain(HINSTANCE hInstance, //ÁøÀÔÁ¡ , wWinMain¿¡¼­ w»°À½ / ¿ùµå¿Í
     // ¤¤ ´Ù¸¸ ¸Ş½ÃÁö Å¥°¡ ºñ¾îÀÖÀ» °æ¿ì ¸Ş¼¼Áö°¡ µé¾î¿Ã¶§±îÁö ´ë±â
 
     // - PeekMessage : ¸Ş¼¼Áö°¡ ¾ø´õ¶óµµ ¹İÈ¯ÀÌ µÈ´Ù.
+
+    //while (true)
+    //{
+    //    if (PeekMessage(&message, NULL, 0, 0, PM_REMOVE)) //°í¼º´É Å¸ÀÌ¸Ó¶û °°ÀÌ ½á¾ßÇÑ´Ù. peekmessage´Â ±âº»ÀûÀ¸·Î ´À¸®±â¶§¹®¿¡ ·¹ÀÌ½Ì°ÔÀÓ °°Àº°æ¿ì
+    //                                                      //ÇÃ·¹ÀÌ¾î°¡ Áö³ª°¡´ÂÁö Ã¼Å©°¡ ´©¶ôµÇ´Â ¹ö±×°¡ ¹ß»ıÇÒ ¼ö ÀÖÀ½
+    //    {
+    //        if (message.message == WM_QUIT)break;
+    //        TranslateMessage(&message);
+    //        DispatchMessage(&message);
+    //    }
+    //}
     while (GetMessage(&message, 0, 0, 0))
     {
 
@@ -188,25 +199,141 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 
      Á¡ÇÁ ´©¸£¸é Á¡ÇÁ°¡ ÄÄÆÄÀÏ·¯¿¡ ´Ù¸¥ÀÏÇÏ´øÁß¿¡µµ À©µµ¿ì¸¦ °­Á¦·Î È£ÃâÇØ¼­ ¸®ÅÏ°ªÀ» ÁÖ´Â °Í
     */
+    //GDI
+    // BMP/PNG/JPG
+    // BMP - È­¼Ò°¡ ³ô´Ù, ¿ë·®ÀÌ Å©´Ù, RGBAÁß A(Åõ¸íµµ)ÀÇ ºÎÀç·Î º¸°£ÀÌ ¾ø´Ù. È¸Àü¿¡ ¹®Á¦°¡ ¸¹À» ¼ö ÀÖ´Ù. ¿ø»öÀÌ °­ÇÑ°Å¸¦ BMP·ÎÇÏ¸é ÁÁÀ½
+    // GDI+
+    // A¸¦ Ãß°¡ÇÏ¿´À½(Áö¿øÀºÇÏ³ª ¶óÀÌºê·¯¸® ÇÔ¼ö¸¦ Áö¿øÇÏÁö ¾Ê¾Æ ¸¸µé¾î ½á¾ßÇÔ)
+    //¡Ú¡Ú¡Ú¡Ú¡Ú
+    HDC hdc;
+    PAINTSTRUCT ps;
+    char str[] = "¿ÀÄÉÀÌ";
+    //Â÷ÀÌ¿¡ ´ëÇØ¼­ Á¶»ç
+    //¤¤ char[]
+    //¤¤ char*
 
-
+    //RECT : »ç°¢ÇüÀÇ ÁÂÇ¥¸¦ ÀúÀåÇÏ±â À§ÇÑ ÀÚ·áÇü
+    // // ¤¤ ½ÃÀÛÁ¡ SX, SY (L, T) / ³¡Á¡ EX, EY (R, B)°¡ Á¸ÀçÇÑ´Ù.
+    // °ÔÀÓÀÇ ¹è°æÈ­¸é °¡º¯ÀûÀÌ¸é *LPRECT , Á¤ÇØÁø Å©±â¸é*PRECT
+    RECT rc = { 100, 100, 200, 200 };
+    
 
     switch (iMessage)
     {
     case WM_CREATE: //»ı¼ºÀÚ¶û µ¿ÀÏ
         break;
+        /*
+        ¡¤ WM_PAINT
 
-        //case WM_PAINT:
-        //{
-        //    PAINTSTRUCT ps;
-        //    HDC hdc = BeginPaint(hWnd, &ps);
-        //    
-        //    EndPaint(hWnd, &ps);
-        //}
-        //break;
+         - À©µµ¿ì¸¦ ´Ù½Ã ±×·Á¾ß ÇÒ¶§ ¹ß»ıÇÏ´Â ¸Ş¼¼Áö
+         ¤¤ À©µµ¿ì°¡ Ã³À½ ¸¸µé¾î Á³À»¶§ ¹ß»ıÇÑ´Ù.
+         ¤¤ À©µµ¿ì Å©±â¸¦ Á¶ÀıÇÒ¶§
+         ¤¤ À©µµ¿ì°¡ ´Ù¸¥ À©µµ¿ì¿¡ °¡·ÁÁ³´Ù°¡ ´Ù½Ã º¸ÀÏ¶§
+         ¤¤ °ü·Ã ÇÔ¼ö°¡ È£ÃâµÉ¶§
+        
+        
+        */
+        //Ãâ·Â¿¡ °üÇÑ ¸ğµç °ÍÀ» ´ã´çÇÑ´Ù.(¹®ÀÚ, ±×¸², µµÇü µîµî È­¸é¿¡ º¸ÀÌ´Â ¸ğµç °Í)
+
+
+    case WM_PAINT:
+    
+       
+       hdc = BeginPaint(hWnd, &ps);
+
+       SetPixel(hdc, 300, 200, RGB(255, 0, 0));
+
+       for (int i = 0; i < 10000; i++)
+       {
+           SetPixel(hdc, rand()%800, rand() % 800, RGB(rand() % 255, rand() % 255, rand() % 255));
+       }
+       
+       for (int i = 0; i < 100; i++)
+       {
+           for (int j = 0; j < 100; j++)
+           {
+               SetPixel(hdc, 400 + i, 300 + j, RGB(255, i*2, j*2));
+           }
+       }
+
+//windowapi ´Â ÁÂ»ó´Ü¿¡¼­ ÁÂÇ¥¸¦ ½ÃÀÛ. µ¥Ä«¸£Æ® ÁÂÇ¥
+//»ï°¢Çü : ¾Ö¸Å
+// »ç°¢Çü : ÃÖ°í
+//¿ø : ÁË¾Ç(ÇÊ¿ä¾Ç) ÄÚ½ºÆ®°¡ ¸¹ÀÌµç´Ù.
+//´Ù°¢Çü : ¾Ö¸Å
+       // ¿ø±×¸®±â
+       Ellipse(hdc, 300, 100, 200, 200);
+       //»ç°¢Çü
+       Rectangle(hdc, 100, 100, 200, 200);
+       //¿ì¸®´Â º¯¼ö·Î ÀÀ¿ëÇØ¾ßÇÏ±â¶§¹®¿¡ ¾Æ·¡¿Í °°ÀÌ¾¸
+       Rectangle(hdc, rc.left, rc.top, rc.right, rc.bottom);
+       //Æú¸®°ïÀ» ÅëÇØ »ï°¢Çü°ú ´Ù°¢Çüµµ ±¸ÇöÀÌ °¡´ÉÇÏ´Ù.
+       /*
+       ¸ÖÆ¼¹ÙÀÌÆ®->À¯´ÏÄÚµå ->tchar
+       strlen->wcslen -> _tcslen
+       strcpy->wcscpy -> _tcscpy
+       strcmp->...
+       strcat->...
+       +
+       strtok->... ¹®ÀÚ¿­ ÀÚ¸£±â
+             
+       //API
+       strchr->... ¹®ÀÚ Ã£±â
+       strstr->... ¹®ÀÚ¿­ Ã£±â
+       
+       */
+       /*¸Ş¸ğ¸®¹öÆÛ¸¦ Ã¼Å©ÇÒ¼öÀÖ³Ä ¾ø³Ä
+       strnlen()
+       strlen_s()
+       */
+
+       //¹®ÀÚ¿­ / ¹®ÀÚ¿­ ±æÀÌ //¿À¹öÇÃ·Î¿ì°¡ ¹ß»ıÇÒ¶§ ÂüÁ¶ÇÏ°íÀÖ°Å³ª °¡¸®Å°°íÀÖÀ¸¸é ÅÍÁü, ÂüÁ¶ÇÏÁö¾ÊÀ¸¸ç ¶Õƒ‹Í¯t ³ª¿È)
+       // ¤¤ strlen() ÇÒ´ç ¹ŞÀº ¸Ş¸ğ¸®¿¡ ¹ÙÀÎµù µÈ ¹®ÀÚ¿­¿¡¼­ NULL °ªÀ» Á¦¿ÜÇÑ ¹®ÀÚ¿­ ±æÀÌ
+       TextOut(hdc, 300, 300, "°úÁ¦°¡ ³Ê¹« Àç¹Õ´Ù^^", strlen("°úÁ¦°¡ ³Ê¹« Àç¹Õ´Ù^^"));
+
+       SetTextColor(hdc, RGB(255, 0, 0));
+       TextOut(hdc, 300, 400, "´õ ¸¹Àº °úÁ¦°¡ ÇÊ¿äÇÏ´Ù.", strlen("´õ ¸¹Àº °úÁ¦°¡ ÇÊ¿äÇÏ´Ù."));
+
+
+       MoveToEx(hdc, 400, 400, NULL);
+       LineTo(hdc, 200, 400);
+
+       MoveToEx(hdc, 400, 400, NULL);
+       LineTo(hdc, 200, 400);
+
+
+
+        EndPaint(hWnd, &ps);
+        break;
+    case WM_LBUTTONDOWN:
+    hdc = GetDC(hWnd);
+
+    SetTextColor(hdc, RGB(0, 0, 255));
+    TextOut(hdc, 350, 500,str, strlen(str));
+
+    ReleaseDC(hWnd, hdc);
+    break;
+
+    case WM_RBUTTONDOWN:
+        break;
+
+    case WM_KEYDOWN:
+        switch (wParam)
+        {
+        case VK_LEFT:
+            break;
+        case VK_RIGHT:
+            break;
+        case VK_ESCAPE:
+            PostMessage(hWnd, WM_DESTROY, 0, 0);
+            break;
+        }
+        break;
+    
     case WM_DESTROY:
         //PostQuitMessage : ÀÌ ÇÔ¼ö´Â ¸Ş¼¼Áö Å¥¿¡ QUIT ¸Ş¼¼Áö¸¦ º¸³»´Â ¿ªÇÒÀ» ¼öÇà
         // QUIT ¸Ş¼¼Áö¸¦ ¼ö½ÅÇÏ´Â ¼ø°£ GetMessage°¡ FALSE¸¦ ¹İÈ¯ÇÏ¹Ç·Î ¸Ş¼¼Áö ·çÇÁ´Â Á¾·áµÈ´Ù.
+        // In reads µé¾î¿Í¼­ ÀĞ±â¸¸ ÇØ¶ó ÂüÁ¶³ª Æ÷ÀÎÅÍ °ÉÁö¸¶¶ó out reads´Â ÀĞ±âÀü¿ë
         PostQuitMessage(0);
         return 0;
 
@@ -229,7 +356,44 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
  - ³ëÆ®¿¡ ¿­½ÉÈ÷ Àû¾î¿Â´Ù.(+°øºÎ)
  ¤¤ CallBack Function, DC, GetDC / ReleaseDC, BeginPaint / EndPaint, WM_PAINT, PAINTSTRUCT
 
-
-
-
 */
+
+
+
+
+//2ÀÏÂ÷ °úÁ¦
+//°úÁ¦1. winAPI Ãâ·Â
+/* -MotoEx() + LineTo()¸¦ ÀÌ¿ëÇÒ °Í
+ - ÀÚ±â ÀÌ¸§ Ãâ·Â (ÇÑ±Û) + UnrealEngine (¿µ¹®)
+     ¤¤Å©±â´Â 800x800 ±âÁØ È­¸é¿¡ Àı¹İÀ» Ã¤¿ì´Â Å©±â·Î ¾çºĞÇÒ °Í
+
+ - ¸¶¿ì½º ¿ŞÂÊÀ» ´©¸£¸é ÇÑ±ÛÀÚ¾¿ Ãâ·ÂÀÌ µÇ°í ¿ìÅ¬¸¯À» ÇÏ¸é ÇÑ±ÛÀÚ¾¿ Áö¿öÁø´Ù. ÀÌ¸§¸¸
+ 
+ ¡ØµµÇü °ü·Ã ÇÔ¼ö »ç¿ë ±İÁö
+
+
+ °úÁ¦2. ±¸±¸´Ü
+
+  - ¿¹¿ÜÃ³¸® ÇÊ¼ö
+  ¤¤ ±¸±¸´ÜÀÇ º»Áú (1´ÜÀÌÇÏx /9´Ü ÀÌ»óx)
+  
+  - ¸¶¿ì½º ¿ŞÂÊ Å¬¸¯À» ÇßÀ» ½Ã 1´Ü¾¿ Ãâ·ÂÀÌ µÇ°í ¿ìÅ¬¸¯À» ÇÏ¸é 1´Ü¾¿ Áö¿öÁø´Ù.
+
+  - ±×¸®°í 3´Ü°è¸¶´Ù °³ÇàÀ» ÇÑ´Ù.
+
+
+  ±İ¿äÀÏ±îÁö
+  °úÁ¦3. ¾ÖÇÃ ·Î°í Ãâ·Â
+
+   - SetPixel()À» ÀÌ¿ëÇØ¼­ ¸¸µç´Ù.
+   - ±Ù¼º ok / ¹İº¹¹® ok / ²Ä¼ö x
+   
+   ¹İº¹¹®°úÁ¦µéÀÓ ´Ù..
+
+   ÇÑÁÙÁ¶»ç.
+   -SetTimer
+   -KillTimer
+   -InvalidateRect (°úÁ¦1¹ø°ú 2¹ø°ü·ÃÀÖÀ½)
+
+
+ */
