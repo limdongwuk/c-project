@@ -11,6 +11,9 @@ int Count = 0;
 void CircleDraw1(HDC _hdc, int startX, int startY, float radius,  int r, int g, int b);
 void CircleDraw(HDC _hdc, int startX, int startY, float radius, int r, int g, int b);
 void CircleDraw2(HDC _hdc, int startX, int startY, float radius, int r, int g, int b);
+void CircleDraw3(HDC _hdc, int startX, int startY, float radius, int r, int g, int b);
+void CircleDraw4(HDC _hdc, int startX, int startY, float radius, int r, int g, int b);
+void CommonDraw(HDC _hdc, int startX1, int startY1, float radius, int startX2, int startY2);
 int APIENTRY WinMain(HINSTANCE hInstance,
     HINSTANCE hPrevInstance,
     LPSTR lpCmdParam,
@@ -44,7 +47,7 @@ int APIENTRY WinMain(HINSTANCE hInstance,
 
 
 }
-int k = 1;
+
 LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 {
     HDC hdc;
@@ -71,7 +74,11 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
         CircleDraw1(hdc, 600, 400, 100, 255, 255, 255);
         CircleDraw2(hdc, 348, 524, 70, 255, 255, 255);
         CircleDraw2(hdc, 449, 524, 70, 255, 255, 255);
-   
+        CircleDraw3(hdc, 348, 279, 70, 255, 255, 255);
+        CircleDraw3(hdc, 449, 279, 70, 255, 255, 255);
+        /*CircleDraw4(hdc, 390, 130, 80, 0, 255, 0);
+        CircleDraw4(hdc, 460, 170, 80, 0, 255, 0);*/
+        CommonDraw(hdc, 390, 130, 80, 460, 170);
         EndPaint(hWnd, &ps);
         break;
 
@@ -165,4 +172,55 @@ void CircleDraw2(HDC _hdc, int startX, int startY, float radius, int r, int g, i
         }
     }
 }
-//y좌표받는 함수 리턴값이 rgb
+
+
+int Color3(int j)
+{
+    if (j < -11)
+        return RGB(0, 255, 0);
+    else if (j < 55)
+        return RGB(255, 215, 0);
+    else
+        return RGB(255, 140, 0);
+
+}
+void CircleDraw3(HDC _hdc, int startX, int startY, float radius, int r, int g, int b)
+{
+    for (float i = -radius; i < radius; i++)
+    {
+        for (float j = -radius; j < radius; j++)
+        {
+            if ((i * i + j * j < radius * radius))
+                SetPixel(_hdc, startX + i, startY + j, Color3(j));
+        }
+    }
+}
+
+void CircleDraw4(HDC _hdc, int startX, int startY, float radius, int r, int g, int b)
+{
+    for (float i = -radius; i < radius; i++)
+    {
+        for (float j = -radius; j < radius; j++)
+        {
+            if ((i * i + j * j < radius * radius))
+                SetPixel(_hdc, startX + i, startY + j, RGB(0, 255, 0));
+        }
+    }
+}
+
+void CommonDraw(HDC _hdc, int startX1, int startY1, float radius, int startX2, int startY2)
+{
+    int TempX = startX1 - startX2; //백터연산
+    int TempY = startY1 - startY2; //백터연산
+    for (float i = -radius; i < radius; i++)
+    {
+        for (float j = -radius; j < radius; j++)
+        {
+            if (i * i + j * j < radius * radius && ((i - TempX) *
+                (i - TempX) + (j -TempY) * (j - TempY) < (radius * radius)))
+            {
+                SetPixel(_hdc, startX2 + i, startY2 + j, RGB(0, 255, 0));
+            }
+        }
+    }
+}
