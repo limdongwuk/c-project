@@ -1,6 +1,5 @@
 
-#include <Windows.h>
-#include <tchar.h> //ÅØ½ºÆ® ÄÉ¸¯ÅÍ
+#include "Stdafx.h"
 
 #pragma region WinAPI
 /*
@@ -77,6 +76,8 @@ TCHAR* script3 = _T("ABC"); //ÄÄÇ»ÅÍ°¡ ¾Ë¾Æ¼­ ¸ÖÆ¼¿Í À¯´Ï¸¦ º¯È¯ÇØÁÖ±â¶§¹®¿¡ ÀýÂ
 
  //ÄÝ¹é ÇÔ¼ö
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
+
+RECT rc;
 
 /*
 hInstance : ÇÁ·Î±×·¥ ÀÎ½ºÅÏ½º ÇÚµé
@@ -215,12 +216,14 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
     //RECT : »ç°¢ÇüÀÇ ÁÂÇ¥¸¦ ÀúÀåÇÏ±â À§ÇÑ ÀÚ·áÇü
     // // ¤¤ ½ÃÀÛÁ¡ SX, SY (L, T) / ³¡Á¡ EX, EY (R, B)°¡ Á¸ÀçÇÑ´Ù.
     // °ÔÀÓÀÇ ¹è°æÈ­¸é °¡º¯ÀûÀÌ¸é *LPRECT , Á¤ÇØÁø Å©±â¸é*PRECT
-    RECT rc = { 100, 100, 200, 200 };
+    //RECT rc = { 100, 100, 200, 200 };
     
 
     switch (iMessage)
     {
     case WM_CREATE: //»ý¼ºÀÚ¶û µ¿ÀÏ
+        rc = RectMakeCenter(400, 400, 100, 100);
+
         break;
         /*
         ¡¤ WM_PAINT
@@ -241,66 +244,70 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
        
        hdc = BeginPaint(hWnd, &ps);
 
-       SetPixel(hdc, 300, 200, RGB(255, 0, 0));
-
-       for (int i = 0; i < 10000; i++)
-       {
-           SetPixel(hdc, rand()%800, rand() % 800, RGB(rand() % 255, rand() % 255, rand() % 255));
-       }
-       
-       for (int i = 0; i < 100; i++)
-       {
-           for (int j = 0; j < 100; j++)
-           {
-               SetPixel(hdc, 400 + i, 300 + j, RGB(255, i*2, j*2));
-           }
-       }
-
-//windowapi ´Â ÁÂ»ó´Ü¿¡¼­ ÁÂÇ¥¸¦ ½ÃÀÛ. µ¥Ä«¸£Æ® ÁÂÇ¥
-//»ï°¢Çü : ¾Ö¸Å
-// »ç°¢Çü : ÃÖ°í
-//¿ø : ÁË¾Ç(ÇÊ¿ä¾Ç) ÄÚ½ºÆ®°¡ ¸¹ÀÌµç´Ù.
-//´Ù°¢Çü : ¾Ö¸Å
-       // ¿ø±×¸®±â
-       Ellipse(hdc, 300, 100, 200, 200);
-       //»ç°¢Çü
-       Rectangle(hdc, 100, 100, 200, 200);
-       //¿ì¸®´Â º¯¼ö·Î ÀÀ¿ëÇØ¾ßÇÏ±â¶§¹®¿¡ ¾Æ·¡¿Í °°ÀÌ¾¸
        Rectangle(hdc, rc.left, rc.top, rc.right, rc.bottom);
-       //Æú¸®°ïÀ» ÅëÇØ »ï°¢Çü°ú ´Ù°¢Çüµµ ±¸ÇöÀÌ °¡´ÉÇÏ´Ù.
-       /*
-       ¸ÖÆ¼¹ÙÀÌÆ®->À¯´ÏÄÚµå ->tchar
-       strlen->wcslen -> _tcslen
-       strcpy->wcscpy -> _tcscpy
-       strcmp->...
-       strcat->...
-       +
-       strtok->... ¹®ÀÚ¿­ ÀÚ¸£±â
-             
-       //API
-       strchr->... ¹®ÀÚ Ã£±â
-       strstr->... ¹®ÀÚ¿­ Ã£±â
-       
-       */
-       /*¸Þ¸ð¸®¹öÆÛ¸¦ Ã¼Å©ÇÒ¼öÀÖ³Ä ¾ø³Ä
-       strnlen()
-       strlen_s()
-       */
 
-       //¹®ÀÚ¿­ / ¹®ÀÚ¿­ ±æÀÌ //¿À¹öÇÃ·Î¿ì°¡ ¹ß»ýÇÒ¶§ ÂüÁ¶ÇÏ°íÀÖ°Å³ª °¡¸®Å°°íÀÖÀ¸¸é ÅÍÁü, ÂüÁ¶ÇÏÁö¾ÊÀ¸¸ç ¶Õƒ‹Í¯t ³ª¿È)
-       // ¤¤ strlen() ÇÒ´ç ¹ÞÀº ¸Þ¸ð¸®¿¡ ¹ÙÀÎµù µÈ ¹®ÀÚ¿­¿¡¼­ NULL °ªÀ» Á¦¿ÜÇÑ ¹®ÀÚ¿­ ±æÀÌ
-       TextOut(hdc, 300, 300, "°úÁ¦°¡ ³Ê¹« Àç¹Õ´Ù^^", strlen("°úÁ¦°¡ ³Ê¹« Àç¹Õ´Ù^^"));
+       DrawRectMake(hdc, rc);
 
-       SetTextColor(hdc, RGB(255, 0, 0));
-       TextOut(hdc, 300, 400, "´õ ¸¹Àº °úÁ¦°¡ ÇÊ¿äÇÏ´Ù.", strlen("´õ ¸¹Àº °úÁ¦°¡ ÇÊ¿äÇÏ´Ù."));
-
-
-       MoveToEx(hdc, 400, 400, NULL);
-       LineTo(hdc, 200, 400);
-
-       MoveToEx(hdc, 400, 400, NULL);
-       LineTo(hdc, 200, 400);
-
+//       SetPixel(hdc, 300, 200, RGB(255, 0, 0));
+//
+//       for (int i = 0; i < 10000; i++)
+//       {
+//           SetPixel(hdc, rand()%800, rand() % 800, RGB(rand() % 255, rand() % 255, rand() % 255));
+//       }
+//       
+//       for (int i = 0; i < 100; i++)
+//       {
+//           for (int j = 0; j < 100; j++)
+//           {
+//               SetPixel(hdc, 400 + i, 300 + j, RGB(255, i*2, j*2));
+//           }
+//       }
+//
+////windowapi ´Â ÁÂ»ó´Ü¿¡¼­ ÁÂÇ¥¸¦ ½ÃÀÛ. µ¥Ä«¸£Æ® ÁÂÇ¥
+////»ï°¢Çü : ¾Ö¸Å
+//// »ç°¢Çü : ÃÖ°í
+////¿ø : ÁË¾Ç(ÇÊ¿ä¾Ç) ÄÚ½ºÆ®°¡ ¸¹ÀÌµç´Ù.
+////´Ù°¢Çü : ¾Ö¸Å
+//       // ¿ø±×¸®±â
+//       Ellipse(hdc, 300, 100, 200, 200);
+//       //»ç°¢Çü
+//       Rectangle(hdc, 100, 100, 200, 200);
+//       //¿ì¸®´Â º¯¼ö·Î ÀÀ¿ëÇØ¾ßÇÏ±â¶§¹®¿¡ ¾Æ·¡¿Í °°ÀÌ¾¸
+//       Rectangle(hdc, rc.left, rc.top, rc.right, rc.bottom);
+//       //Æú¸®°ïÀ» ÅëÇØ »ï°¢Çü°ú ´Ù°¢Çüµµ ±¸ÇöÀÌ °¡´ÉÇÏ´Ù.
+//       /*
+//       ¸ÖÆ¼¹ÙÀÌÆ®->À¯´ÏÄÚµå ->tchar
+//       strlen->wcslen -> _tcslen
+//       strcpy->wcscpy -> _tcscpy
+//       strcmp->...
+//       strcat->...
+//       +
+//       strtok->... ¹®ÀÚ¿­ ÀÚ¸£±â
+//             
+//       //API
+//       strchr->... ¹®ÀÚ Ã£±â
+//       strstr->... ¹®ÀÚ¿­ Ã£±â
+//       
+//       */
+//       /*¸Þ¸ð¸®¹öÆÛ¸¦ Ã¼Å©ÇÒ¼öÀÖ³Ä ¾ø³Ä
+//       strnlen()
+//       strlen_s()
+//       */
+//
+//       //¹®ÀÚ¿­ / ¹®ÀÚ¿­ ±æÀÌ //¿À¹öÇÃ·Î¿ì°¡ ¹ß»ýÇÒ¶§ ÂüÁ¶ÇÏ°íÀÖ°Å³ª °¡¸®Å°°íÀÖÀ¸¸é ÅÍÁü, ÂüÁ¶ÇÏÁö¾ÊÀ¸¸ç ¶Õƒ‹Í¯t ³ª¿È)
+//       // ¤¤ strlen() ÇÒ´ç ¹ÞÀº ¸Þ¸ð¸®¿¡ ¹ÙÀÎµù µÈ ¹®ÀÚ¿­¿¡¼­ NULL °ªÀ» Á¦¿ÜÇÑ ¹®ÀÚ¿­ ±æÀÌ
+//       TextOut(hdc, 300, 300, "°úÁ¦°¡ ³Ê¹« Àç¹Õ´Ù^^", strlen("°úÁ¦°¡ ³Ê¹« Àç¹Õ´Ù^^"));
+//
+//       SetTextColor(hdc, RGB(255, 0, 0));
+//       TextOut(hdc, 300, 400, "´õ ¸¹Àº °úÁ¦°¡ ÇÊ¿äÇÏ´Ù.", strlen("´õ ¸¹Àº °úÁ¦°¡ ÇÊ¿äÇÏ´Ù."));
+//
+//
+//       MoveToEx(hdc, 400, 400, NULL);
+//       LineTo(hdc, 200, 400);
+//
+//       MoveToEx(hdc, 400, 400, NULL);
+//       LineTo(hdc, 200, 400);
+//
 
 
         EndPaint(hWnd, &ps);
@@ -395,5 +402,44 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
    -KillTimer
    -InvalidateRect (°úÁ¦1¹ø°ú 2¹ø°ü·ÃÀÖÀ½)
 
-
  */
+
+/*
+3ÀÏÂ÷ °úÁ¦
+°úÁ¦1. ¿À¸Á¼º Ãâ·Â
+
+ - ¿À¸Á¼ºÀ» ¸¶¹ýÁøÃ³·³ Ãâ·Â
+
+ - ¾ç½Ä ¹× »ç¿ë ¹®¹ýÀº º»ÀÎ ÀÚÀ¯Áö¸¸ »ï°¢ ÇÔ¼ö x
+
+°úÁ¦2. »ç°¢Çü 2°³ ¿òÁ÷ÀÌ±â
+ - ÃÑ »ç°¢Çü °¹¼ö : 2°³
+  - ÇÏ³ª´Â ¿òÁ÷ÀÏ ¼ö ÀÖ´Â »ç°¢Çü / ´Ù¸¥ ÇÏ³ª´Â ¿òÁ÷ÀÏ ¼ö ¾ø´Â »ç°¢Çü
+ - ¿òÁ÷ÀÏ ¼ö ¾ø´Â »ç°¢ÇüÀ» ¿òÁ÷ÀÏ¼öÀÖ´Â »ç°¢ÇüÀÌ ¹Ð¾î³¾ ¼ö ÀÖÀ¸¸é µÈ´Ù.
+
+ ¿¹¿ÜÃ³¸®
+ ¤¤ 1. 2°³ÀÇ »ç°¢ÇüÀº È­¸é ¹ÛÀ¸·Î ³ª°¥ ¼ö ¾ø´Ù.
+ ¤¤ 2. 2°³ÀÇ »ç°¢ÇüÀ» ÃÊ±â À§Ä¡·Î µ¹¸®´Â ±â´Éµµ Ãß°¡ÇÑ´Ù.
+
+¡Øº°´Ù¸¥ ¾ð±ÞÀ» ÇÏ±âÀü¿¡´Â Ãæµ¹ ÇÔ¼ö¸¦ »ç¿ëÇÏÁö ¸» °Í
+Á¶°Ç½ÄÀ¸·Î ¸éÀ» ºñ±³ÇÏ¸é µÈ´Ù. ¿ÞÂÊ³×¸ðÀÇ ¶óÀÌÆ® °¡ ¿À¸¥ÂÊ ³×¸ðÀÇ¿ÞÂÊxÁÂÇ¥¸¦ ³ÑÁö¾Ê´Â´À³¦
+
+´ÙÀ½ÁÖ ¿ù¿äÀÏ
+°úÁ¦3. »ç°¢Çü ¿µÈ¥ ¹Ð¾î³Ö±â
+
+ - ½ÃÀÛÀº Å« »ç°¢Çü 2°³¿Í ÀÛÀº »ç°¢Çü 1°³
+
+ - ³»°¡ ¿òÁ÷ÀÏ ¼ö ÀÖ´Â »ç°¢Çü ¾È¿¡´Â ÀÛÀº »ç°¢ÇüÀÌ ÀÖ´Ù.
+
+ - »ç°¢ÇüÀ» ¿òÁ÷ÀÌ¸é ÀÛÀº »ç°¢Çü ¿ª½Ã ¿òÁ÷ÀÌ°Å³ª / Å« »ç°¢Çü¿¡ ²ø·Á°¡¾ß ÇÑ´Ù.
+ ¤¤ ²ø·Á°¡´Â °ÍÀ» ÃßÃµ
+
+ -¿¹¿ÜÃ³¸® : ÀÛÀº »ç°¢ÇüÀº Å« »ç°¢ÇüÀ» ¹þ¾î³¯ ¼ö ¾ø´Ù.
+ 
+ -Å« »ç°¢Çü³¢¸® Ãæµ¹ÀÌ µÇ¸é ÀÛÀº »ç°¢ÇüÀº Ãæµ¹ÀÌµÈ ¹Ý´ëÆí »ç°¢ÇüÀ¸·Î ÀÌµ¿ÇÑ´Ù.
+
+ ¡Ø ÀÌ¶§ ¿òÁ÷ÀÏ¼öÀÖ´Â ÁÖµµ±ÇÀº ÀÛÀº »ç°¢ÇüÀ» ¼ÒÀ¯ÇÏ°í ÀÖ´Â Å« »ç°¢Çü
+
+ ¡Ø¸ð¼­¸®¿¡ ´ëÇÑ ¿¹¿ÜÃ³¸® ¼öÇàÇÒ °Í
+
+*/
