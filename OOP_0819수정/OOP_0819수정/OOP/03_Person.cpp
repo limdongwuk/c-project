@@ -11,5 +11,9 @@ Food* Person::MakeFood(const std::string& name) //food* 반환타입 person::makefoo
 {
 	Food myFood(name);
 	std::cout << "나는 " << name << "를(을) 요리한다." << std::endl;
+	
 	return &myFood;
+
+	
+	
 }

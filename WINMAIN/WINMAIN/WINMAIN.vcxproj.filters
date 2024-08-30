@@ -13,16 +13,84 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\API FrameWork">
+      <UniqueIdentifier>{34ec271d-d27f-45c4-adfa-b6a41031f668}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\API FrameWork\DesignPattern">
+      <UniqueIdentifier>{5849dda2-12df-4fed-b830-ac7e25378bca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\API FrameWork\PCH">
+      <UniqueIdentifier>{cbd4825d-cdc5-4b14-ad20-f71465887be3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\API FrameWork\WinMain">
+      <UniqueIdentifier>{195055e8-91e8-4210-b7e9-232f2bdc8b2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\과제">
+      <UniqueIdentifier>{d4da9350-9db5-4442-a9d4-4f9c9d806fd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\utility">
+      <UniqueIdentifier>{4dc02188-084d-4f4d-9fc1-7e814c2c84c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\utility\math">
+      <UniqueIdentifier>{a01cfc15-fa29-4101-91cc-1157113f92f4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="winMAIN.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="주석뺀것.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="소스.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Stdafx.cpp">
+      <Filter>소스 파일\API FrameWork\PCH</Filter>
+    </ClCompile>
+    <ClCompile Include="winMAIN.cpp">
+      <Filter>소스 파일\API FrameWork\WinMain</Filter>
+    </ClCompile>
+    <ClCompile Include="winMAIN0830.cpp">
+      <Filter>소스 파일\API FrameWork\WinMain</Filter>
+    </ClCompile>
+    <ClCompile Include="0828과제1.cpp">
+      <Filter>소스 파일\과제</Filter>
+    </ClCompile>
+    <ClCompile Include="0828과제2.cpp">
+      <Filter>소스 파일\과제</Filter>
+    </ClCompile>
+    <ClCompile Include="0828과제3.cpp">
+      <Filter>소스 파일\과제</Filter>
+    </ClCompile>
+    <ClCompile Include="0829과제1.cpp">
+      <Filter>소스 파일\과제</Filter>
+    </ClCompile>
+    <ClCompile Include="0829과제2.cpp">
+      <Filter>소스 파일\과제</Filter>
+    </ClCompile>
+    <ClCompile Include="C3DVector.cpp">
+      <Filter>소스 파일\utility\math</Filter>
+    </ClCompile>
+    <ClCompile Include="C3DMatrix.cpp">
+      <Filter>소스 파일\utility\math</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SingletoneBase.h">
+      <Filter>소스 파일\API FrameWork\DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="Stdafx.h">
+      <Filter>소스 파일\API FrameWork\PCH</Filter>
+    </ClInclude>
+    <ClInclude Include="C3DVector.h">
+      <Filter>소스 파일\utility\math</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomFunction.h">
+      <Filter>소스 파일\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonMacroFunction.h">
+      <Filter>소스 파일\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="C3DMatrix.h">
+      <Filter>소스 파일\utility\math</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

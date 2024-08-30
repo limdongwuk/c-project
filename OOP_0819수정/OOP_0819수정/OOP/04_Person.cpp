@@ -14,3 +14,9 @@ const std::string& Person::GetName() const
 {
 	return name;
 }
+
+void Person::TurnOnAircon(AirConditioner& activate)
+{
+	activate.SetActivate(1);
+}
+

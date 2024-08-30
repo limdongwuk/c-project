@@ -5,7 +5,9 @@
 class Person
 {
 public:
+	/*Person(const Person& other);*/
 	void EatFood(Food& food);
 	Food* MakeFood(const std::string& name);
+
 };
 

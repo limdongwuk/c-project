@@ -19,8 +19,8 @@ int main()
 		std::cout << "¿¡¾îÄÁ ÄÑÁü" << std::endl;
 	else
 		std::cout << "¿¡¾îÄÁ ²¨Áü" << std::endl;
-	// ¿©±â¿¡¼­ p.TurnOnAircon ÇÔ¼ö¸¦ È£ÃâÇÏ¿©, Person °´Ã¼·Î aircon Àü¿øÀ» ÄÑÁüÀ¸·Î ¹Ù²ãÁÖ¼¼¿ä
-
+	
+	p.TurnOnAircon(aircon);
 	if (aircon.GetIsActivated())
 		std::cout << "¿¡¾îÄÁ ÄÑÁü" << std::endl;
 	else

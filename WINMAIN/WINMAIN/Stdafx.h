@@ -57,4 +57,78 @@
 //ID2D1Factory* _ID2DFactory = nullptr;
 //ID2D1HwndRenderTarget* _ID2DRenderTarget = nullptr;
 
+//Stdafx (Standard Application Frameworks)
+//ㄴ VS를 이용하여 프로젝트를 생성하면 생성되는 클래스 약어 ->MS
+//ㄴ 표준 어플리케이션 프레임워크 툴
+
+// #내가 만든 헤더 파일#
 #include "CommonMacroFunction.h"
+#include "RandomFunction.h"
+
+//#디자인 패턴#
+#define RND RandomFunction::getSingleton()  ///디자인 패턴에 대한 define은 왠만하면 풀네임으로 적음)
+ //#define RANDOMFUNCTION RandomFunction::getSingleton() //대문자로
+
+// #메크로#
+#define WINNAME             (LPSTR)(TEXT("WindowsAPI"))
+#define WINSTART_X          400
+#define WINSTART_Y          400
+#define WINSIZE_X           800
+#define WINSIZE_Y           800
+#define WINSTYLE            WS_CAPTION|WS_SYSMENU    //WS_CAPTION 타이틀바를 가지기 위한 옵션
+//constexpr WINSTYLE
+//define 과 constexpr중 선택 차이점 알아봐야함
+
+
+/*
+define
+전처리기 지시자로 c++전처리기를 통해 상수를 정의 텍스트 치환을 통해 해당 정의 내용으로 그대로 바뀐다.
+타입 검사나 범위 지정이 없기 때문에, 컴파일 과정에서 다른 헤더 파일에 정의되어 있는 
+매크로 값과 사용자가 정의한 매크로 값이 중복되어 오류나 모호성이 발생할 수 있다.
+
+constexpr
+컴파일 시간에 미리 계산될 수 있도록 지정할 수 있는 키워드
+변수를 선언하는 방법과 같게, 타입 지정이나 리터럴 지정, 템플릿, 사용자 정의 형식도 가능
+런타임에 계산을 안하고 컴파일 타임에 하기 때문에 빠르다. 
+constexpr 함수 사용시 조건사항
+1. 함수 바깥의 데이터를 읽거나 쓰면 안 된다.
+2. if나 for 같은 제어 구조가 없어야 한다.
+3. 하나의 계산 문장만 간단하게 담을 수 있다.
+4. 다른 constexpr 함수만 호출이 가능하다.
+
+문자열 치환 등과 같이 텍스트치환 목적이면
+define 사용해야 하고
+상수나 함수를 쓸때는 되도록 constexpr
+
+// constexpr 함수 예제
+constexpr int square(int x) {
+    return x * x;
+}
+
+int main() {
+    // 컴파일 타임에 계산됨
+    constexpr int result = square(5);
+
+    // 일반 변수에도 사용 가능
+    int num = 10;
+    int result2 = square(num);
+*/
+
+
+
+
+//# 매크로 함수#
+#define SAFE_DELETE(p)          {if(p) {delete (p); (p) = nullptr;}}
+#define SAFE_DELETE_ARRAY(p)    {if(p) {delete[] (p); (p) = nullptr;}}
+#define SAFE_RELEASE(p)         {if(p) {(p)->release(); (p) = nullptr;}}
+
+//tempplate <typename InterfaceType>
+
+
+//#전역변수#
+// 변수가 선언되어있다는걸 명시하는 명시키워드로 생각해야함 
+// 선언했다고 생각하면 안된다. 이게 있다고 명시만 해주는 것
+//캐릭터 로딩창에서 캐릭터가 불러와지지 않고 관련된 다른것들이 불러와졌을때 캐릭터와 연결된것에 대해 오류띄우지말고 넘어가게 하는 명시키워드
+extern HINSTANCE    _hInstance;
+extern HWND         _hWnd;
+extern POINT        _ptMouse;

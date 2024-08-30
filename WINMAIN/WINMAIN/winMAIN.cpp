@@ -42,10 +42,13 @@
   ㄴ 클래스가 메모리에 실제로 구현된 실체
   ㄴ 실행되고 있는 각각의 프로그램들
 */
-HINSTANCE _hInstance;
 
-// 핸들 : 윈도우 창
+//전역변수
+HINSTANCE _hInstance;
 HWND _hWnd;
+POINT _ptMouse = { 0,0 };
+
+
 
 // 윈도우 타이틀
 LPTSTR _lpszClass = TEXT("Windows API");
@@ -76,6 +79,7 @@ TCHAR* script3 = _T("ABC"); //컴퓨터가 알아서 멀티와 유니를 변환해주기때문에 절�
 
  //콜백 함수
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
+void SetWindowSize(int x, int y, int width, int height);
 
 RECT rc;
 
@@ -109,7 +113,7 @@ int APIENTRY WinMain(HINSTANCE hInstance, //진입점 , wWinMain에서 w뺐음 / 월드와
     wndClass.hIcon = LoadIcon(NULL, IDI_APPLICATION); //게임 실행할때 위쪽표시줄 왼쪽 아이콘
     wndClass.hInstance = hInstance;                          //소유한 식별자 정보
     wndClass.lpfnWndProc = (WNDPROC)WndProc; //외워 롱포인터 펑셔널 넘버링 0번으로 매핑 될거기때문에 일반적으로는 건들지 않아도 됨 //윈도우 프로시져
-    wndClass.lpszClassName = _lpszClass;  //클래스 이름
+    wndClass.lpszClassName = WINNAME;  //클래스 이름
     wndClass.lpszMenuName = NULL;             //메뉴이름
     wndClass.style = CS_HREDRAW | CS_VREDRAW; //도구상자 뜻함 오른쪽 상단  //윈도우 스타일
 
@@ -122,13 +126,13 @@ int APIENTRY WinMain(HINSTANCE hInstance, //진입점 , wWinMain에서 w뺐음 / 월드와
     // 1-3. 화면에 보여줄 윈도우 창 생성
     _hWnd = CreateWindow
     (
-        _lpszClass,                //윈도우 클래스 식별자
-        _lpszClass,                //윈도우 타이틀 바 이름
-        WS_OVERLAPPEDWINDOW,        //윈도우 스타일
-        400,                       //윈도우 화면 X 좌표
-        100,                       //윈도우 화면 Y 좌표
-        800,                       //윈도우 화면 가로크기
-        800,                       //윈도우 화면 세로크기
+        WINNAME,                //윈도우 클래스 식별자
+        WINNAME,                //윈도우 타이틀 바 이름
+        WINSTYLE,        //윈도우 스타일
+        WINSTART_X,                       //윈도우 화면 X 좌표
+        WINSTART_Y,                       //윈도우 화면 Y 좌표
+        WINSIZE_X,                       //윈도우 화면 가로크기
+        WINSIZE_Y,                       //윈도우 화면 세로크기
         NULL,                      //부모 윈도우 GetDesktopWindow()도 가능 창을 여러개 쓸수있음
         (HMENU)NULL,               //메뉴 핸들
         hInstance,                 //인스턴스 지정
@@ -347,6 +351,22 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
     }
     return (DefWindowProc(hWnd, iMessage, wParam, lParam));
 
+}
+
+void SetWindowSize(int x, int y, int width, int height)
+{
+    RECT rc = { 0,0,width, height };
+    //실제 윈도우 크기 조정
+    //AdjustWindowRect(): RECT 구조체, 원스타일, 메뉴여부
+    AdjustWindowRect(&rc, WINSTYLE, false);
+
+    //렉트의 정보로 윈도우 사이즈 세팅
+    SetWindowPos(_hWnd, NULL,
+        x, y,
+        (rc.right - rc.left), //cx
+        (rc.bottom - rc.top), //cy
+        SWP_NOZORDER | SWP_NOMOVE); //zoder 랜더링 관련 피사체들이 겹쳐졌을때의 랜더링 어떤걸 더 우선순위로 표현할 것인가
+    // move로 하면 해상도에 따라 ui가 안맞춰질 수 있음
 }
 
 /*
