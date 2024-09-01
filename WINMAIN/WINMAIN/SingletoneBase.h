@@ -10,7 +10,7 @@ template <class T>
 class SingletoneBase
 {
 protected:
-    static T* singleton;
+    static T* singleton; // 처음 호출할때 객체를 생성
 
     SingletoneBase(){}
     ~SingletoneBase() {}
@@ -26,14 +26,14 @@ T* SingletoneBase<T>::singleton = 0;
 template <typename T>
 T* SingletoneBase<T>::getSingleton(void)
 {
-    if (!singleton) singleton = new T; //singleton 포인터가 null이라면 
-    return singleton;
+    if (!singleton) singleton = new T; //singleton 포인터가 null이라면 객체 생성
+    return singleton; 
 }
 
 template <typename T>
 void SingletoneBase<T>::releaseSingleton(void)
 {
-    if (singleton) //singleton 포인터가 null이 아니라면
+    if (singleton) //singleton 포인터가 null이 아니라면 삭제
     {
         delete singleton;
         singleton = 0;

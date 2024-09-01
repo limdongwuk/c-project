@@ -72,6 +72,18 @@
     <ClCompile Include="C3DMatrix.cpp">
       <Filter>소스 파일\utility\math</Filter>
     </ClCompile>
+    <ClCompile Include="0829과제3.cpp">
+      <Filter>소스 파일\과제</Filter>
+    </ClCompile>
+    <ClCompile Include="0830과제1.cpp">
+      <Filter>소스 파일\과제</Filter>
+    </ClCompile>
+    <ClCompile Include="0830과제2.cpp">
+      <Filter>소스 파일\과제</Filter>
+    </ClCompile>
+    <ClCompile Include="winMAIN_수업내용 주석.cpp">
+      <Filter>소스 파일\API FrameWork\WinMain</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SingletoneBase.h">

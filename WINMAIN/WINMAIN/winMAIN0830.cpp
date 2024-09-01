@@ -102,8 +102,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 
         Rectangle(hdc, centerX, centerY, 100, 100);
 
-
-
         EndPaint(hWnd, &ps);
         break;
 
@@ -211,5 +209,25 @@ void SetWindowSize(int x, int y, int width, int height)
 
  - GetAsyncKeyState()
  - 상태 값 -> 4가지에 대해 조사
+
+이전에 누른 적이 없고 호출 시점에서 안눌린 상태 = 0x0000. ...
+이전에 누른 적이 없고 호출 시점에서 눌린 상태 = 0x8000. ...
+이전에 누른 적이 있고 호출 시점에서 눌린 상태 = 0x8001. ...
+이전에 누른 적이 있고 호출 시점에서 안눌린 상태 = 0x0001.
+
  - 명확하게 보고싶으면 &
+ GetAsyncKeyState(VK_UP)& 0x8000 코드의 의미
+  - AND 연산하는 이유는 정확한 시점에서 키의 상태를 확인하기 위함
+  - GetAsyncKeyState 함수가  0x8000을 반환한다면 이를 0x8000으로 AND 연산하여 
+  키가 눌렸을때는 0x8000이 나온다. 그러나 눌려진 적이 있으면 
+  GetAsyncKeyState 함수는 0x0001을 반환한다. 0x0001에다 0x8000을 AND
+  연산하게되면 0이 나오게 된다. (만약에 AND 연산하지 않았을 경우에는 눌러진 적이 있는 
+  상태도 참이 되어 동작을 수행할 것이다.) 
+
+
+  특정 키의 현재 상태를 비동기적으로 확인
+  키보드의 입력을 감지하는데 사용
+  매개 변수 :vkey
+  가상 키 코드를 나타내는 정수, 각 키는 고유한 가상 키코드로 식별
+  ex ) vk_left는 왼쪽 화살표 키, vk_return 엔터 키
 */

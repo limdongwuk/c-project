@@ -212,7 +212,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
     //★★★★★
     HDC hdc;
     PAINTSTRUCT ps;
-    char str[] = "오케이";
+
     //차이에 대해서 조사
     //ㄴ char[]
     //ㄴ char*
@@ -312,7 +312,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 //       MoveToEx(hdc, 400, 400, NULL);
 //       LineTo(hdc, 200, 400);
 //
-
 
         EndPaint(hWnd, &ps);
         break;
